@@ -1,21 +1,20 @@
-# on:
-#   push:
-#     branches: master
-    
-#configure manual trigger
-on:
-  workflow_dispatch:
+name: Render Quarto HTML
 
-name: Render and Publish
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -41,13 +40,19 @@ jobs:
             any::igraph
             any::quarto
 
-      - name: Render script
-        run: Rscript -e 'quarto::quarto_render("UKRN-ORP-2025.qmd")'
+      - name: Render Quarto file
+        run: |
+          quarto render UKRN-ORP-2025.qmd --to html
         
       - name: Commit results
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add UKRN-ORP-2025.html
-          git commit -m 'html updated' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add UKRN-ORP-2025.html
+            git commit -m "Auto-render UKRN-ORP-2025.qmd"
+            git push
+          fi
+
