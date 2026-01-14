@@ -7,9 +7,9 @@ n_plot <- function(data, x, title, total = sum(data$n), ylim = NULL, ytext = .1)
     mutate(x = fct_rev(data[[x]])) |>
     ggplot(aes(x = x, y = n / total, fill = as.factor(x == na_text))) +
     geom_col(show.legend = FALSE) +
-    geom_text(aes(label = pcnt, 
-                  y = ifelse(n/total < ytext, 
-                             (n/total) + ytext - (ylim[[2]]*.01), 
+    geom_text(aes(label = pcnt,
+                  y = ifelse(n/total < ytext,
+                             (n/total) + ytext - (ylim[[2]]*.01),
                              ytext),
                   color = I(ifelse(n/total < ytext, "black", "white"))),
               hjust = 1) +
@@ -17,7 +17,7 @@ n_plot <- function(data, x, title, total = sum(data$n), ylim = NULL, ytext = .1)
     scale_fill_manual(values = c(yes, "grey30")) +
     scale_x_discrete(drop = FALSE) +
     scale_y_continuous(expand = expansion(0),
-                       labels = scales::label_percent(), 
+                       labels = scales::label_percent(),
                        sec.axis = sec_axis(~ . * total)) +
     labs(x = NULL,
          y = NULL,
@@ -151,6 +151,39 @@ table_panel5 <- function(data, x, title, by, ncol = 6,
 
   ggplot(data, aes(x = x, y = pcnt, fill = fct_rev(value))) +
     geom_col() +
+    facet_wrap(~by,
+               labeller = as_labeller(panel_title)) +
+    coord_flip(clip = 'off', ylim = c(0,1)) +
+    scale_y_continuous(expand = expansion(c(0)),
+                       labels = scales::label_percent()) +
+    scale_fill_manual(values = fill_cols,
+                      guide=guide_legend(reverse=T)) +
+    labs(x = NULL,
+         y = NULL,
+         fill = NULL,
+         title = title)
+}
+
+table_panel5b <- function(data, x, title, by, ncol = 6,
+                         fill_cols = NULL) {
+  data$x <- data[[x]]
+  data$by <- data[[by]]
+  data$label <- round(data$pcnt*100) |> paste0("%")
+
+  ptitle <- data |>
+    mutate(title = paste0(by, " (n=", max(total), ")"),
+           .by = by) |>
+    select(by, title) |>
+    unique()
+  panel_title <- setNames(ptitle$title, ptitle$by)
+
+  data |>
+    mutate(label = ifelse(as.integer(value) == 1, label, NA)) |>
+    ggplot(aes(x = x, y = pcnt, fill = fct_rev(value))) +
+    geom_col() +
+    geom_text(aes(label = label),
+              y = .06, color = "white",
+              hjust = 1, na.rm = TRUE) +
     facet_wrap(~by,
                labeller = as_labeller(panel_title)) +
     coord_flip(clip = 'off', ylim = c(0,1)) +

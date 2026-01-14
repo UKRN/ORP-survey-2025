@@ -14,8 +14,9 @@ format:
     df-print: paged
     theme: 
       - simplex
-      - custom.scss
+      - include/custom.scss
     mainfont: Roboto
+    page-layout: full
 execute: 
   echo: false
   message: false
@@ -23,7 +24,7 @@ execute:
 fig-width: 8
 fig-height: 6
 fig-format: png
-fig-dpi: 300
+fig-dpi: 144
 fig-cap-location: top
 params:
   inst: "University of Glasgow"
@@ -32,7 +33,7 @@ params:
 
 <footer>UKRN Institutional Report: `r params$inst`</footer>
 
-![](logo.png){style="float:right; width: 25%"}
+![](include/logo.png){style="float:right; width: 25%"}
 
 ```{r, setup}
 #| include: false
@@ -142,6 +143,7 @@ Here are few examples of how your institution can use this survey results:
 All survey materials can be found on the [UKRN Sharing Platform](https://oercommons.org/groups/evaluation/15346/24199/7499/?&__hub_id=179).
 
 ### Contacts
+
 Questions should be addressed in the first instance to your UKRN [Institutional Lead](https://www.ukrn.org/institutional-leads/) and [Open Research Coordinator and Administrator](https://www.ukrn.org/orp-orcas/), who coordinated the survey distribution at your institution.
 
 ## Data Visualisation
@@ -173,9 +175,9 @@ qq_data <- count(data, Research_approach, .drop = FALSE)
 
 title <- paste0("Research Approach (n=", sum(qq_data$n), ")")
 
-y <- ceiling((max(qq_data$n) + 1)/5) * 5
+y <- max(qq_data$n)/sum(qq_data$n) + .02
 n_plot(qq_data, "Research_approach", title,
-            ylim = c(0, y))
+            ylim = c(0, y), ytext = y/10)
 ```
 
 
@@ -202,9 +204,9 @@ meth_summary <- meth_data |>
 
 title <- paste0("Methods (n=", nrow(data), ")")
 
-y <- ceiling((max(meth_summary$n) + 1)/5) * 5
+y <- max(meth_summary$n)/nrow(data) + .02
 n_plot(meth_summary, "name", title, total = nrow(data),
-            ylim = c(0, y))
+            ylim = c(0, y), ytext = y/10)
 ```
 
 
@@ -294,9 +296,9 @@ disc_data <- count(data, Discipline, .drop = FALSE)
 
 title <- paste0("Disciplines (n=", sum(disc_data$n), ")")
 
-y <- ceiling((max(disc_data$n) + 1)/5) * 5
+y <- max(disc_data$n)/sum(disc_data$n) + .02
 n_plot(disc_data, "Discipline", title, 
-            ylim = c(0, y))
+            ylim = c(0, y), ytext = y/10)
       
 ```
 
@@ -317,8 +319,9 @@ career_data <- count(data, Career_level, .drop = FALSE)
 
 title <- paste0("Career Level (n=", sum(career_data$n), ")")
 
-y <- ceiling((max(career_data$n) + 1)/5) * 5
-n_plot(career_data, "Career_level", title, ylim = c(0, y))
+y <- max(career_data$n)/sum(career_data$n) + .02
+n_plot(career_data, "Career_level", title, 
+       ylim = c(0, y), ytext = y/10)
   
 ```
 
@@ -465,13 +468,9 @@ aware_disc <- aware_data |>
 
 aware_disc |>
   mutate(name = fct_rev(name)) |>
-  table_panel5("name", 
+  table_panel5b("name", 
                   "Awareness by Discipline",
-                  "Discipline_category", 2, c(no, yes)) +
-  geom_text(aes(label = ifelse(value == "Aware", n, "")),
-            color = "white",
-            y = .01,
-            hjust = 0)
+                  "Discipline_category", 2, c(no, yes))
 ```
 
 
@@ -578,11 +577,17 @@ use_practice_bin <- use_data |>
                           "Not applicable" ~ NA)) |>
   filter(Research_approach != na_text, !is.na(use)) |>
   count(name, Research_approach, use) |>
-  mutate(pcnt = n/sum(n), .by = c(name, Research_approach)) 
+  mutate(pcnt = n/sum(n), .by = c(name, Research_approach),
+         label = sprintf("%.0f%%", pcnt*100),
+         label = ifelse(use == "Used", label, NA)
+         ) 
 
 use_practice_bin |>
   ggplot(aes(x = fct_rev(Research_approach), y = pcnt, fill = use)) +
   geom_col() +
+  # geom_text(aes(label = label),
+  #             y = .25, color = "white",
+  #             hjust = 1, na.rm = TRUE) +
   facet_wrap(~name, ncol = 3) +
   coord_flip(clip = 'off') +
   scale_y_continuous(expand = expansion(c(0)),
@@ -808,7 +813,7 @@ attitudes_qq <- attitudes_data |>
          .by = c(name, Research_approach)) |>
   mutate(name = fct_rev(name))
 
-table_panel5(attitudes_qq, "name", 
+table_panel5b(attitudes_qq, "name", 
                   "Attitudes by Research Approach",
                   "Research_approach", 2, attitude_cols)
 ```
