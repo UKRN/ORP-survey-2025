@@ -371,7 +371,11 @@ The sample representativeness analysis is available here: <https://osf.io/k8rtz/
 
 ```{r, setup}
 #| include: false
-library(tidyverse) # data processing and visualisation
+library(dplyr) # data processing and visualisation
+library(tidyr)
+library(ggplot2)
+library(readr)
+library(forcats)
 library(DT) # for interactive tables
 library(ggraph) # for network plots
 library(igraph) # for network plots
