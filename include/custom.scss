@@ -1,0 +1,53 @@
+/*-- scss:defaults --*/
+$primary:       #F2008C !default;
+$secondary:     #F2008C !default;
+$link-color:    #13A89E !default;
+
+/*---
+ukrn <- list(
+  purple = "#4E4F86",
+  green = "#13A89E",
+  pink = "#F2008C",
+  dark = "#28295B"
+)
+---*/
+
+/*-- scss:rules --*/
+.panel-tabset a.nav-link {
+  padding: 0 5px;
+  color: grey;
+}
+.panel-tabset a.nav-link[aria-select="true"],
+.nav-tabs .nav-link.active
+{
+  color: #F2008C !important;
+}
+
+figcaption {
+  border: 2px solid #F2008C;
+  border-radius: 0.5em;
+  background-color: #F2008C22;
+  padding: 0.5em;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #28295B;
+  color: white;
+  text-align: center;
+  z-index: 999;
+}
+
+h5 {
+  color: #F2008C;
+}
+
+.license {
+  float: right;
+}
+.license a {
+  color: white !important;
+}

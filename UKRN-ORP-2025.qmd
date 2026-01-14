@@ -1,0 +1,1816 @@
+---
+title: "Open Research Programme Survey 2025 Report"
+bibliography: include/refs.bib
+bibliographystyle: "apa"
+format: 
+  html:
+    embed-resources: true
+    link-external-newwindow: true
+    toc: true
+    toc-depth: 5
+    toc-expand: 2
+    toc-location: left
+    fig-cap-location: top
+    number-sections: true
+    number-depth: 5
+    df-print: paged
+    theme: 
+      - simplex
+      - include/custom.scss
+    mainfont: Roboto
+execute: 
+  echo: false
+  message: false
+  warning: false
+fig-width: 8
+fig-height: 6
+fig-format: png
+fig-dpi: 100
+---
+
+<footer>UKRN Working Paper ######### <span class="license"><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></span></footer>
+
+<div style="float:right; width: 25%">
+  <img src="include/logo.png" style="width: 100%;" />
+  UKRN ROR ID: [049czkm07](https://ror.org/049czkm07)
+</div>
+
+UKRN Working Paper number and date: ######### / `r Sys.Date() |> format("%Y-%m-%d")`
+
+**Author Contributions**: 
+
+* [Jackie Thompson](https://orcid.org/0000-0003-2851-3636): Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Validation, Visualization, Writing - original draft, and Writing - review & editing.
+* [David Shanks](https://orcid.org/0000-0002-4600-6323): Conceptualization, Funding acquisition, Investigation, Methodology, Project administration, and Writing - review & editing.
+* [Patrick Lewis](https://orcid.org/0000-0003-4537-0489): Conceptualization, Project administration, and Writing - review & editing.
+* [Neil Jacobs](https://orcid.org/0000-0002-8050-8175)°: Conceptualization, Formal analysis, Investigation, Methodology, Validation, Writing - original draft, and Writing - review & editing.
+* [Alice Howarth](https://orcid.org/0000-0003-2288-1745): Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Validation, Visualization, Writing - original draft, and Writing - review & editing.
+* [Bill Greenhalf](https://orcid.org/0000-0002-1865-3195): Conceptualization, Funding acquisition, Methodology, and Writing - review & editing.
+* [Lavinia Gambelli](https://orcid.org/0000-0002-2257-6364): Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Validation, Visualization, Writing - original draft, and Writing - review & editing.
+* [Lisa DeBruine](https://orcid.org/0000-0002-7523-5539): Data curation, Formal analysis, Visualization, and Writing - review & editing.
+* [Ruth Davies](https://orcid.org/0009-0005-2943-2290): Conceptualization, Formal analysis, Investigation, Visualization, Writing - original draft, and Writing - review & editing.
+
+°Corresponding author, neil.jacobs@bristol.ac.uk
+
+**Acknowledgee contributions**:
+
+* [Noemie Aubert Bonn](https://orcid.org/0000-0003-0252-2331): Writing - review & editing.
+* [Banaz Jalil](https://orcid.org/0000-0002-1535-3744): Writing - review & editing.
+* [Marcus Munafo](https://orcid.org/0000-0002-4049-993X): Conceptualization, Funding acquisition, Supervision, and Writing - review & editing.
+* [Etienne Roesch](https://orcid.org/0000-0002-8913-4173): Data curation, Software, Validation, Visualization, and Writing - review & editing.
+
+We acknowledge the support of [Cecina Babich Morrow](https://orcid.org/0000-0003-2188-1495) and the Jean Golding Institute, University of Bristol.
+
+The Author contributions and Acknowledgee contributions were created using Tenzing [@Holcombe-2020].
+
+**Conflict of interest statement**: Patrick Lewis declares Royal Society Industry fellow in partnership with LifeArc; Lavinia Gambelli, Ruth Davies, Alice Howarth, David Shanks, Neil Jacobs, Bill Greenhalf, Banaz Jalil, Lisa DeBruine, Marcus Munafo, and Etienne Roesch declare no competing interest.
+
+**Funding acknowledgement**: Research England Development Fund award: Growing and Embedding Open Research in Institutional Practice and Culture
+
+**DOI**: XXXXX
+
+{{< pagebreak >}}
+
+<br /><br /><br />
+	
+## Executive summary
+
+The UK Reproducibility Network's Open Research Programme (ORP, 2021–2027) aims to accelerate the adoption of high-quality Open Research (OR) practices across UK institutions. This report presents findings from the 2025 ORP survey, the second in a planned series of three, designed to assess the prevalence of OR practices and attitudes toward them among researchers in partner institutions. The survey builds on lessons from the 2022–2023 Open and Transparent Research Practices (OTRP) survey and aligns with international efforts to harmonise monitoring of OR practices.
+
+### Methods
+
+The survey instrument was based on the Brief Open Research Survey (BORS) to ensure conceptual consistency and brevity. It covered awareness, use, and attitudes toward 13 OR practices, including open access, open data, preprints, preregistration, and replication studies. Respondents also indicated perceived facilitators for adopting OR practices. Sampling aimed for representativeness across disciplines and career stages using institutional HESA (Higher Education Statistics Agency) data, with deployment managed locally by 19 partner institutions. In total, 1,408 responses were collected across 23 disciplines and three career levels.
+
+### Key Findings
+
+*	**Awareness and Use**: Awareness of OR practices is high overall, but uptake varies. Open access is near-universal (99% awareness, 86% use), while preregistration and citizen science awareness/use are lower (55%/25% and 66%/13%, respectively). Notably, awareness of FAIR data, a much-quoted aspect of OR, is the lowest of any OR practice at 51%. Disparities between awareness and use are greatest for replication studies, citizen science, and open code/software, suggesting persistent implementation barriers.
+*	**Disciplinary and Career Differences**: Quantitative and mixed-methods researchers report higher engagement than qualitative researchers, and uptake is generally greater in scientific disciplines than in arts and humanities. Senior researchers show higher awareness and use, though junior and mid-career researchers express strong motivation to engage more.
+*	**Attitudes**: Most respondents view OR as useful (80%), but only 42% feel their institution provides adequate training. Only 18% of respondents engaged with OR in hiring and promotion of staff.
+*	**Facilitators**: Practical enablers—guidance, infrastructure, time allocation—are prioritised over cultural drivers such as recognition in hiring and promotion. Interest in incentives and clearer guidance is strong, while demand for training is moderate, and varies among disciplines and career levels.
+
+### Discussion and Implications
+
+The findings confirm that awareness alone is insufficient to embed OR practices. Structural and cultural barriers persist, including limited institutional support and weak integration of OR into assessment frameworks. Disciplinary norms remain a major axis of variation, underscoring the need for domain-sensitive guidance and exemplars. The survey also highlights opportunities for targeted interventions, particularly for early-career researchers and qualitative disciplines. Methodologically, the adoption of targeted, stratified sampling represents a step toward more representative datasets, though analysis of representativeness remains inconclusive.
+
+### Conclusion
+
+UK efforts to advance OR are broadly aligned with global trends: foundational practices are widely adopted, but deeper systemic changes—especially around incentives and disciplinary adaptation—are still needed. These findings will inform ORP interventions and contribute to international efforts to harmonise monitoring and evaluation of OR practices.
+
+## Report
+
+### Background and aims
+
+The [Open Research Programme](https://www.ukrn.org/open-research-programme/) (ORP, 2021-2027) aims to accelerate the uptake of high-quality Open Research (OR) practices. Its evaluation, therefore, needs to demonstrate the extent to which it has achieved this aim. Evidence is being collected in three ways:
+
+1. A survey of the research communities in partner institutions (the focus of this working paper);
+
+2. The use by ORP partners of specific OR indicators, explored during 2024-2025, is planned to be reported in a forthcoming UKRN Working Paper.
+
+3. Data collected by the ORP intervention projects related to their specific objectives.
+
+The ORP's first such survey, the Open and Transparent Research Practices (OTRP) survey, was conducted by 15 partner institutions in 2022-2023, and provided important insight for planning the ORP intervention projects, especially for prioritising training and informing the Open and Responsible Researcher Reward and Recognition (OR4) project on reform of research assessment. It also provided valuable lessons for future surveys, particularly regarding the importance of a representative sample. The data from the OTRP survey have been published [@HughesNoehrer-2024].
+
+The ORP evaluation comprises two more surveys, in 2025 – the subject of this working paper – and a final survey scheduled for 2027. Planning for these two further surveys included learning lessons from the OTRP; coordinating and aligning with other surveys (in particular the Brief Open Research Survey [BORS; Norris-2022]; and drawing from expertise across the ORP.
+
+The aim of the 2025 and 2027 surveys is to assess the prevalence of OR practices, and to provide an evidence base for investigating any observed changes in behaviour or prevalence of OR practices. Such changes will be compared with the various ways in which ORP partners have engaged with the ORP, and inferences will be drawn using a Bayesian approach as part of the 2027 survey.
+
+The realisation of this aim was intended to have the following benefits:
+
+*	For partner institutions, by providing insight and benchmarks on progress toward OR across disciplines and career stages;
+
+*	For the ORP as a whole, by providing data that, when combined with evidence of the patterns of engagement with different ORP interventions, can help evaluate which interventions have been effective.
+ 
+The ORP surveys were conducted in an international context where monitoring OR practices was high on the agenda. Apart from an international roll-out of the BORS instrument mentioned above, the Center for Open Science (COS) continued to deploy its [Open Scholarship Survey](https://www.cos.io/initiatives/open-scholarship-survey), and many recent, relevant, ad hoc surveys have been reported in the literature [e.g., @Mozersky-2021;@Gopalakrishna-2022;@Scoggins-2024;@Ferguson-2023;@Houtkoop-2018;@Bazdaric-2021;@EuropeanCommission-2022].
+
+In addition, several initiatives aim to develop more automated approaches to monitoring, including the [ORP indicators](https://www.ukrn.org/open-research-indicators/) work noted above, [dashboards](https://www.bihealth.org/en/translation/innovation-enabler/quest-center/projects/project/bua-open-science-dashboards) developed by the Berlin Institute of Health, the [ScreenIT](https://metascience2021.org/events/screenit-can-we-use-automated-screening-tools-to-improve-reporting-in-scientific-papers/) group of tools, and various initiatives of the European Union, such as under the [European Open Science Cloud](https://eoscpilot.eu/wp3-policy/eosc-open-science-monitor-specifications/methodological-approach-monitoring-open-science). Attempting to bring some coherence to this landscape is the [Open Science Monitoring Initiative](https://open-science-monitoring.org/), related to the [2021 UNESCO Recommendation on Open Science](https://www.unesco.org/en/open-science).
+
+UKRN's contribution to this move toward coherence is the development of a consensus statement (forthcoming) that outlines how those conducting such surveys, including UKRN, will coordinate their work and adopt the rigorous research practices promoted by the Reproducibility Networks. This recognises that data on OR, whether from surveys or automated tools, are increasingly used in meta-research studies.
+
+### Methods
+
+#### Instrument design
+
+The design of the survey instrument had to meet several requirements, namely:
+
+1. elicit information on the prevalence of OR practices in ORP partner institutions across disciplines, to evaluate the success of the programme;
+
+2. where possible, be consistent with other survey instruments, to strengthen moves toward consistency in the vocabulary and concepts used;
+
+3. where possible, be consistent with the OTRP survey, although the OTRP's open sampling strategy would make longitudinal comparisons difficult;
+
+4. be as concise as possible, to minimise the attrition rate during completion that was observed in the OTRP survey.
+
+Extended discussions, comparisons and mappings between existing instruments led to a decision to base the 2025 survey instrument closely on the BORS instrument. There was much consistency between the BORS and the OR practices covered by the OTRP survey, but the former was considerably simpler. Furthermore, discussions with the BORS team led to an agreement that they would not target ORP partner institutions in their 2025 open survey to avoid duplication; instead, they might use the open data from the 2025 survey to supplement and compare with their survey data, noting the different sampling strategies.
+ 
+All survey materials including survey questionnaire, ethics application and approval, participant information sheet, survey recruitment email, briefing to UKRN Institutional Leads and Open Research Coordinators and Administrators (including sampling strategy), data analysis preregistration, and sample representativeness analysis are available on the [UKRN Sharing Platform](https://oercommons.org/groups/evaluation-design/15346/24199/7499/?&__hub_id=179).
+The survey aggregate report, survey data and visualisation code are forthcoming on the same platform.
+
+
+#### Question design
+
+We undertook a comprehensive analysis of the OR practices covered by the OTRP 2022-2023, the BORS and the COS Open Scholarship Survey (OSS). We aligned the coverage from these surveys with the UKRN's ORP training priorities (see [training schema](https://www.ukrn.org/training-schema/?et_fb=1&PageSpeed=off)), the [UKRN's ORP indicators pilot](https://www.ukrn.org/open-research-indicators/) priorities and the [UNESCO Recommendation on Open Science](https://www.unesco.org/en/open-science) priority areas. We also compared other key surveys and datasets in the area of OR. We therefore identified thirteen key OR practices as well as the umbrella term of 'Open Research' (note: throughout this report 'OR' refers to broad open research practices, and 'open research' indicates the specific practice listed in the survey question set). To account for disciplinary differences in terminology and definitions of these practices, we included a single-sentence description for each practice, aligned with similar descriptions used by BORS. 
+ 
+Respondents were asked to indicate their awareness of those practices (yes/no) as well as their use of those practices (I use it often/I have used it/I have NOT used it/not applicable to my research). To assess their attitudes, respondents were asked to indicate their level of agreement (Strongly agree / Somewhat agree / Neutral / Somewhat disagree / Strongly disagree) with nine statements reflecting a range of attitudes towards OR practices. To assess potential facilitators to engaging with OR practices, respondents were asked what would help them adopt more OR practices, and allowed to tick up to 5 options from an overall list of 12, including 10 possible facilitators, as well as options indicating they had no intention of adopting more, or that they were already doing all they could. 
+ 
+Finally, respondents were asked to provide their discipline based on categories adapted from HESA (Higher Education Statistics Agency), the research methods they use, their main research approach (qualitative, quantitative, both, neither) and their career level. Descriptions of these categories are available in the survey instrument on the [UKRN Sharing Platform](https://oercommons.org/groups/evaluation-design/15346/24199/7499/?&__hub_id=179).
+
+
+#### Sample strategy
+
+The novel sampling strategy had to meet several requirements, namely to:
+
+1. elicit information from a sample that was, as far as possible, representative of the research community in the ORP partner institutions;
+
+2. be practical for institutions to implement in 2025 and again in 2027, with limited resources;
+
+3. allow for comparison, where possible, with other datasets.
+
+We took a practical approach to representativeness, focusing on the discipline and seniority of respondents and targeting active researchers (staff and post-graduate students) who would be engaging in OR practices directly, rather than professional services staff who might support and enable them. We focused on sampling across disciplines and seniority levels to support our survey aims. If the sampling strategy proves successful, we anticipate that future investigations might consider stratification across gender and other protected characteristics to answer specific research questions on demographic engagement with OR.
+
+It is important to note that the survey was not administered centrally. Each ORP partner institution deployed it locally. There were several reasons for this, including assurances that personal data about those invited to participate would not leave their institutions.
+
+Discussions within the ORP assessed three potential overall strategies against the three criteria noted above: partners generate the sample using internal data sources; partners work with the central ORP team to create the sample using internal and third-party data sources; conduct an open survey, and weight responses.
+
+Comprehensive discussions, pilots, and advice from the University of Bristol Data Protection Officer led to a decision to adopt an approach in which ORP partners were given three options, with a strong preference for option A over option B and for option B over option C.
+
+The options were as follows:
+
+*	Option A: The ORP partner institutions use their HESA staff and student returns to generate the sample using detailed guidance from the ORP team. Once the sample was created, staff at the ORP partner institution would email respondents directly to invite them to complete the survey, and reminders would be sent to them.
+
+*	Option B: The ORP team and partner institution would use the publicly available open scholarship database OpenAlex to identify names and/or email addresses of active researchers who published research within a recent specified time frame and whose last known institutional affiliation was with the institution of interest. A small sample of these researchers would be chosen, and the survey would be emailed to them.
+
+*	Option C: staff within the institution would circulate the recruitment request and survey link to researchers and postgraduate research students within their institution using local communications channels such as mailing lists, Teams channels, etc.
+
+Among these, Option A was communicated and discussed with ORP partners over several months and was strongly preferred. This gave partner institutions time to liaise with their HESA data teams and navigate their local ethics context. Most of the partners adopted Option A, no partners adopted Option B or Option C. One institution (Royal Veterinary College) circulated the survey to all research staff and students due to the comparatively small size of the institution's research population. Three decided not to deploy the survey. In total 19 institutions deployed the survey and are included in this report: Cardiff University, Keele University, King's College London, Newcastle University, Oxford Brookes University, Royal Veterinary College, University College London, University of Bristol, University of Edinburgh, University of Glasgow, University of Leeds, University of Liverpool, University of Oxford, University of Reading, University of Sheffield, University of Southampton, University of Surrey, University of Sussex, University of Wolverhampton.
+
+The detailed sampling strategy and guidance to partner institutions are available on the [UKRN Sharing Platform](https://oercommons.org/groups/evaluation-design/15346/24199/7499/?&__hub_id=179).
+
+
+#### Deployment
+
+Preliminary briefings, including background rationale, survey instrument questions, sampling strategy guidance and anticipated timeline were shared with ORP partner institutions during Autumn 2024, followed by a final set of documentation in January 2025, including participant recruitment email, participant information sheet, ethics approval and detailed sampling guidance (see [UKRN Sharing Platform](https://oercommons.org/groups/evaluation-design/15346/24199/7499/?&__hub_id=179)).
+
+The survey instrument was hosted on the Qualtrics platform at the University of Bristol, and a link was shared with ORP partners. Three partner institutions added local-specific questions to the survey, which were strictly limited to avoid excessively lengthening the instrument. The adapted survey instruments for each of those three institutions were hosted separately on Qualtrics.
+
+Partner institutions were given from January to July 2025 to open their survey and solicit responses. During this period, we recommended that the survey remain open for at least three weeks. The survey was anonymous and reminders were recommended.
+
+The survey data were analysed using dedicated R scripts developed by the University of Glasgow, to a specification agreed with the central ORP survey team. This generated the aggregate findings described in this report, as well as private institution-specific reports shared with each ORP partner institution, which allowed them to benchmark local OR practices against those in the whole ORP collaboration.
+
+
+### Findings
+
+#### Demographics of Survey Respondents
+
+The survey, conducted across 19 UKRN partner institutions (@fig-inst), gathered responses from 1,408 researchers spanning 23 disciplines. Research approaches were diverse: 525 respondents primarily used quantitative methods, 269 qualitative, 528 combined both, and 35 used neither (@fig-qq). Health and Biosciences was the largest disciplinary group (576 respondents), including the most represented field – medical-allied subjects (191). Physical Sciences had 328 respondents, followed by Social Sciences (301) and Arts and Humanities (154) (@fig-disc). Career levels were well distributed, with junior researchers forming the largest group (526), followed by senior (492) and mid-career researchers (343) (@fig-career).
+
+
+#### Awareness and Use of Open Research Practices
+
+This section summarises survey findings on researchers' awareness and use of key OR practices. It focuses on broad patterns across research approaches, disciplines, and career levels.
+ 
+Overall, the survey results indicate broad awareness and adoption of OR practices among respondents; however, engagement varies considerably across specific practices, research approaches, and disciplines. On average, respondents reported a 31% difference between knowing about a practice and applying it in their work at the high level (@fig-aware and @fig-attitudes). The most significant disparity between awareness and use was observed for replication studies, citizen science, and open code/software, indicating researchers might experience substantial barriers to implementation of these practices despite being relatively aware of them. In contrast, the smallest disparities were for recognising contributions, open access, and 'open research', suggesting these practices are more widely understood and readily integrated. 
+ 
+Quantitative and mixed-methods researchers, as well as those in scientific disciplines, generally report higher awareness and use, while qualitative researchers and those in Arts and Humanities disciplines report lower engagement (@fig-aware-qq, @fig-use-qq, @fig-attitudes-qq, and @fig-facilitators-qq). Awareness and use also tend to increase with seniority, with some exceptions such as open data, where awareness is similar across career levels (@fig-use-career and @fig-facilitators-career). Overall, this suggests experience and disciplinary norms play a key role in uptake.
+
+##### Open research
+
+Awareness of 'open research' as an umbrella term was high (around 85%), with quantitative and mixed-methods researchers reporting the most significant awareness and use (@fig-aware and @fig-use). Awareness and use were consistently strong across detailed methods (generally over 80% awareness and 60–80% use) (@fig-aware-meth and @fig-use-meth).
+ 
+Disciplinary differences were more pronounced. Archaeology (100%), psychology and neuroscience (97%), veterinary sciences (91%) and computing and information science (91%) showed near-universal awareness of the 'open research' umbrella term, while philosophy and religious studies (53%), law (69%), and architecture, building and planning (71%) were lower (@fig-aware-disc). Use tended to mirror awareness, with higher engagement in the more aware disciplines (@fig-use-disc). Awareness and use also increased modestly with seniority (@fig-aware-career and @fig-use-career).
+
+##### Open access
+
+Open access was the most widely known and used practice, recognised by nearly all respondents (99%) and used by 86% (@fig-aware and @fig-use). Awareness and use were uniformly high across research approaches, research methods, and career levels, though slightly lower among junior researchers (@fig-aware-qq, @fig-aware-meth, @fig-aware-career, @fig-use-qq, @fig-use-meth, and @fig-use-career).
+
+Disciplinary variation was minimal, with most fields reporting use of over 73%. The exception was a few humanities and social science areas, such as literature, language and area studies and economics, where use was somewhat lower (69% and 68% respectively) (@fig-use-disc).
+
+##### Preprints
+
+Awareness of preprints was also high (91%), with 62% reporting use or frequent use (@fig-aware and @fig-use). Quantitative and mixed-methods researchers had higher awareness and use than qualitative researchers (@fig-aware-qq and @fig-use-qq).
+
+Across disciplines, awareness ranged from 100% in mathematical sciences and 97% in veterinary sciences to 60% in agriculture and food science and 68% in education and teaching (@fig-aware-disc). However, use varied independently of awareness, for instance, some disciplines such as veterinary sciences reported 100% awareness but only 45% have used this method often (@fig-use-disc). Preprint awareness increases slightly by career stage with 85% awareness in junior researchers, 94% in mid-career researchers and 97% in senior researchers (@fig-aware-career). However, a greater disparity is seen in use across career levels with junior researchers having used or using often only around 50% compared to almost 75% for mid-career researchers and senior researchers (@fig-use-career).
+
+##### Open data and FAIR data
+
+Open data was widely known (94%) and moderately used (62%), while FAIR data had lower awareness (51%) and use (33%) (@fig-aware and @fig-use). Both awareness and use were highest among quantitative researchers, and use increased with seniority (@fig-aware-qq, @fig-use-qq, and @fig-use-career).
+
+Open data awareness was high across all disciplines (ranging from 83%-100%), while FAIR data varied widely, ranging from 26% for philosophy and religious studies to 80% for agriculture and food science (@fig-aware-disc). Use patterns were reasonably varied, but often with more substantial use in quantitatively-oriented fields such as physical sciences (73% open data, 44% FAIR data) and computing and information sciences (76% open data, 57% FAIR data) compared to philosophy and religious studies (22%, open data, 0% FAIR data) (@fig-use-disc).
+
+##### Open protocols, open materials and open code/software
+
+Open materials, open protocols and open code/software are all relatively well known, with an overall awareness of 83%, 77%, and 88% respectively (@fig-aware). In all three cases, awareness and use are higher in quantitative researchers than qualitative researchers to varying degrees (@fig-aware-qq and @fig-use-qq). It is notable that open materials are better known (76%) and used (34%) by qualitative researchers than open protocols (61% and 20% respectively) and open code/software (61% and 8% respectively).
+
+##### Open peer review
+
+Open peer review was well known (82%) but used by fewer than half of respondents (42%) (@fig-aware and @fig-use). Awareness and use were slightly higher among quantitative and mixed-methods researchers (88% and 83%, respectively) than among qualitative researchers (71%) (fig. 10 and 17). Disciplinary patterns mirrored those seen elsewhere, with greater awareness in Health & Biosciences and lower in Arts & Humanities (@fig-aware-disc). Across career levels, awareness is reasonably high, but again use is appreciably lower, with only 52% of senior researchers having used open peer review (@fig-aware-career and @fig-use-career).
+
+##### Preregistration and replication studies
+
+Preregistration was among the least known and used practices, with 55% aware and around 25% having used it (@fig-aware and @fig-use). Replication studies were better known (84% awareness) but also less commonly used (28%) (@fig-aware and @fig-use). Both practices had higher awareness (63% preregistration and 90% replication studies) and use (27% preregistration, 36% replication studies) among quantitative researchers (@fig-aware-qq and @fig-use-qq). Awareness and use of preregistration were highest in Health and Biosciences disciplines, particularly psychology and neuroscience (93% awareness and 63% use). Although awareness of replication studies was relatively high across disciplines (45%-100%), use was highest in Health and Biosciences and Physical Sciences (@fig-aware-disc and @fig-use-disc).
+Awareness and use of both practices did not differ notably by career level (@fig-use-career).
+
+##### Co-production and citizen science
+
+Co-production had relatively high awareness (80%) and moderate use (54%) (@fig-aware and @fig-use). Awareness was strongest among qualitative researchers (89%) and those in the Arts and Humanities, and Social Sciences (@fig-aware-qq and @fig-aware-disc). Citizen science was less known (66% aware) and rarely used (13%) (@fig-aware and @fig-use), mainly concentrated in archaeology (39%), and architecture, building and planning (38%) (fig. 20). Use of both practices was highest at senior levels (@fig-use-career).
+
+##### Recognising contributions
+
+Awareness of recognising contributions (e.g., CRediT taxonomy) was high (83%), and use substantial (70%) (@fig-aware and @fig-use). Quantitative and mixed-methods researchers were most engaged, in terms of awareness and use (@fig-aware-qq and @fig-use-qq). Use varied across disciplines and tended to rise with career level (@fig-use-disc and @fig-use-career).
+
+
+#### Attitudes and Facilitators
+
+##### Attitudes
+
+Overall, respondents expressed positive attitudes towards OR. Most agreed that OR is useful (80%), know which practices are relevant to their work (Comprehension, 73%), and expected within their research communities (Norms, 68%), and many felt supported by managers/supervisors (Support, 60%). A notable proportion of respondents expressed a desire to engage more with OR practices than they currently do ('Participation' 62%). Fewer (49%) knew where to find further information and guidance (Resources), and only 42% felt that their institutions offered adequate training (@fig-attitudes).
+
+Qualitative researchers tended to be less confident about which OR practices apply to their work, how to implement them, and whether they are expected within their disciplines (@fig-attitudes-qq).
+
+Across all groups, few believed OR practices were considered in hiring or promotion decisions (18%), especially in certain disciplines, such as history and classics, and business and management, where disagreement exceeded 90% (@fig-attitudes-disc).
+
+Finally, no notable differences were highlighted among career levels (@fig-attitudes-career). However, junior researchers were least confident and most eager to engage more with OR, while senior researchers were more confident but less focused on increasing participation.
+
+##### Facilitators
+
+Interest in potential facilitators was broad and balanced, with practical support (infrastructure, time, guidance, prioritisation, and ethical clarity) rated slightly higher than social or institutional drivers. Few respondents (7%) felt they were already doing all they could (@fig-facilitators).
+
+Guidance was the most consistently endorsed facilitator, followed by incentives and improved time allocation. Training demand was moderate overall, but higher among qualitative and junior researchers (@fig-facilitators-qq and @fig-facilitators-career). Senior and mid-career respondents prioritised time, infrastructure, and recognition over training (@fig-facilitators-career).
+
+##### Links Between Attitudes and Facilitators
+
+Comparing attitudes and facilitators reveals several themes. For example, training: while fewer than 50% of respondents felt institutional training meets researchers' needs, maybe also due to lack of knowledge on finding resources (49%), relatively few (32%) requested more of it, suggesting a need for better-targeted, visible, and relevant provision (@fig-attitudes and @fig-facilitators).
+
+Reward and recognition of OR in hiring and promotion remain limited. Most respondents reported that OR is rarely considered in hiring or promotion. While only 30% saw formal recognition in recruitment and promotion as a key facilitator, more respondents (39%) identified incentives such as awards or funding as effective motivators (@fig-attitudes and @fig-facilitators).
+
+Finally, while confidence around use of OR practices and disciplinary norms was generally relatively high (59% and 68%, respectively), confidence in prioritising which practices matter most in a respondent's research field emerged as a more significant barrier (40%) in conjunction with time allocation (42%) (@fig-attitudes and @fig-facilitators), the latter particularly for senior researchers (49%) (@fig-facilitators-career). These findings suggest that more explicit guidance on prioritisation and better support on time management are key to increasing OR engagement.
+
+### Discussion
+
+The findings from the 2025 ORP survey contribute to a growing body of international evidence on the awareness and adoption of, and attitudes toward, OR practices. They provide insights into the UK context and into institutional-level variation across the ORP network. Overall, the results show high levels of awareness of most OR practices - an encouraging foundation - and persistent structural and cultural barriers to their full embedding.
+
+While many findings align with existing literature and expectations [e.g., @Houtkoop-2018;@Ferguson-2023;@Gopalakrishna-2022;@Scoggins-2024], several results from the 2025 ORP survey offer novel insights.
+
+Although there was consistently high awareness of open data practices across disciplines and even research methods, we were surprised to find low awareness of FAIR data among participants. Setting this in the context of the wider OR movement, where FAIR data is a key focus, this might highlight a gap in communication or training for researchers.
+
+Perceived wisdom and some research dictate that the most significant barrier to engaging with OR practices is one of time. The wider literature identifies administrative burden as a consistent barrier in the research ecosystem [@Gownaris-2022]. We were therefore surprised to find that time allocation was not identified as the standout facilitator in our sample. In fact, while many researchers did identify time allocation as a facilitator (42%), a similar proportion of researchers identified a wide range of other facilitators as key. The pattern of responses suggests that, on the whole, facilitators improving know-how or practical concerns (e.g., infrastructure, time allocation, guidance, prioritisation, ethical clarity) were somewhat more popular than facilitators relating to cultural factors (e.g., disciplinary norms, recognition in hiring and promotion, or support from colleagues). This distribution supports the [COS pyramid of culture change](https://www.cos.io/blog/strategy-for-culture-change), which proposes that foundational elements like infrastructure and ease of use should precede normative and policy-level changes, suggesting that capacity building in these areas is still lacking [@Cuevas-2022]. However, the relatively balanced endorsement across levels suggests that researchers may simultaneously perceive multiple barriers, and that change strategies should be responsive to this complexity. This is exemplified in the UNESCO Open Science Outlook 1: status and trends around the world [@UNESCO-2023], which builds on the COS pyramid of culture change to indicate the often intertwined nature of these areas. 
+
+Interestingly, some results appeared to conflict across different sections of the survey. For instance, while a minority of participants felt that their institution provided adequate training, training was not a standout facilitator. This likely reflects nuances in question wording or interpretation, reinforcing the idea that how we measure matters and suggesting that mixed-methods approaches may be needed to understand researcher behaviour and motivation fully. We could interpret these data to infer that, while some researchers believe training is inadequate, they do not think a lack of training is the barrier to OR engagement, which is further supported by broad awareness of OR practices across the whole sample. 
+
+Some needs identified are broadly shared across research methods and career levels, such as the desire for more precise guidance. In contrast, others are more specific to particular research approaches or epistemic traditions, such as infrastructure and training.
+
+Our analysis of these data identifies some surprising findings that warrant further investigation. Namely, we noted an unexpectedly high proportion of researchers who claimed to be using specific methods, such as the CRediT taxonomy, to recognise contributions. It is, of course, possible that the use of such methods to recognise contributions is increasing at an unexpected pace, but we note that it is also entirely possible that survey respondents have misinterpreted the definition of “recognising contributions”.
+
+#### Comparisons with wider literature
+
+The high levels of awareness and use of core practices such as open access, open data, and preprints mirror international trends. Surveys conducted by the COS (2021–2023) and within the European Commission's Open Science Monitor (2022) similarly found that open access is now near-universal, with open data and preprints following close behind but still constrained by disciplinary norms and infrastructure. The relatively lower awareness and use of practices such as preregistration, open peer review, and replication studies are consistent with this broader evidence, suggesting that the diffusion of OR remains uneven across methods and disciplines. Our data suggest that while there are some disciplinary differences in awareness of OR, the key disciplinary differences are seen in the variable relationship between awareness and use across disciplines. This offers insight into future opportunities for supporting the development of engagement with OR in underrepresented disciplines.
+
+A notable feature of the 2025 ORP data is the contrast between quantitative and qualitative researchers. Similar divides have been reported internationally [e.g., @Mozersky-2021;@Bazdaric-2021], where OR frameworks are often perceived as being more readily applicable to quantitative paradigms. The present findings confirm that this remains a major axis of differentiation in engagement with OR practices. This underscores the importance of current efforts, including those by the ORP and UKRN partners, to articulate how transparency, sharing, and reproducibility can be expressed in diverse epistemic and methodological traditions.
+
+The finding that senior researchers report higher awareness and use than their junior colleagues is also supported by prior studies [e.g., @Ferguson-2023;@Norris-2022], though it may not hold in all fields [Silverstein-2024]. However, our data provide a nuanced picture: junior researchers express strong motivation to engage more with OR, despite lower confidence and less institutional support. This suggests that early-career researchers may represent a key leverage point for culture change, provided they receive adequate training, mentorship, and clear signals of institutional recognition.
+
+#### Institutional and systemic factors
+
+As in other studies, institutional support emerges as a decisive factor. The gap between generally positive attitudes toward OR and the relatively low agreement that institutions provide adequate training and resources mirrors findings from European and North American contexts [e.g., @EuropeanCommission-2022] and from other contexts [@Chakravorti-2025]. The limited integration of OR criteria into assessment and promotion processes further reinforces structural disincentives that constrain behavioural change. We note that there is strikingly strong disagreement with assessment and promotion use across our sample and reflect that this might indicate some dissent on this topic that our survey questions did not adequately prompt for. This resonates with the conclusions of the UNESCO Recommendation on Open Science (2021), which identifies reform of research assessment and recognition systems as essential to embedding open science principles. This call is also endorsed by initiatives such as the Declaration on Research Assessment (DORA) and the Coalition for Advancing Research Assessment (CoARA), both of which advocate for more inclusive, transparent, and responsible evaluation practices.
+
+The findings also reinforce the interdependence between institutional and disciplinary norms. In line with work by Scoggins and Robertson (2024), our results suggest that while most researchers understand the relevance of OR to their field, many, especially those in qualitative or applied disciplines, seek greater clarity on prioritisation. We might argue that a greater understanding of which practices are most relevant, and what good practice looks like in a particular research context would be valuable for informing prioritisation. This highlights the value of domain-sensitive guidance and community-led examples, such as those being developed under the ORP and by other international reproducibility networks.
+
+#### Implications for monitoring and evaluation
+
+The 2025 ORP survey contributes to international efforts to harmonise monitoring of OR practices, including by aligning with the BORS [@Norris-2022]. The survey is informed by UKRN involvement with a wide variety of monitoring initiatives including the Open Science Monitoring Initiative (OSMI) and the monitoring efforts of the UNESCO Recommendation on Open Science. Preliminary work (publication forthcoming) established the wider consensus on survey monitoring and aimed to embed best-practice in our methodology. In this sense, the 2025 ORP survey is not only a tool for local evaluation but also part of a broader effort to establish shared, comparable metrics for openness and transparency. The adoption of sampling from institutional HESA data marks a distinct methodological approach, offering a practical, privacy-compliant route to generating more representative datasets than open recruitment models typically allow. Our approach, if sustained in 2027, could provide one of the most robust longitudinal datasets on OR practices currently available.
+
+#### Theoretical and practical implications
+
+Viewed through the lens of behavioural and cultural change, the findings suggest that awareness alone is no longer the main barrier to OR. Instead, the persistence of uneven uptake points to the complex interplay of incentives, infrastructures, disciplinary norms, and perceptions of feasibility, findings echoed by meta-research on open science adoption [e.g., @Allen-2019;@Nosek-2022]. Addressing these structural issues may require a dual strategy: embedding OR expectations and recognition within institutional frameworks, while providing discipline-sensitive training, exemplars, and guidance to make OR practices feel relevant and achievable.
+
+#### Limitations
+
+This survey aimed to gather insights from a wide range of researchers with experience across a variety of research methods and with disciplinary diversity and inclusivity. This offers insight on the disciplinary variation when it comes to engaging with OR practices, but it also raises some limitations particularly around the taxonomy of OR and the disciplinary variations. We are aware that different disciplines have a different relationship to some OR practices and during the survey question design carefully considered ways to mitigate potential variation in understanding and interpretation. Nevertheless, discipline-specific interpretation of OR practices, or indeed discipline-specific terminology for those practices might have influenced the responses given. We also note that these data do not lend themselves to appropriate statistical analysis. 
+
+The analysis of sample representativeness (@sec-annex) is, unfortunately, inconclusive. This is likely due to two factors. Firstly, despite best efforts and targeted sampling, response rates remained moderate and so it is likely that self-selection bias remained an important factor. Secondly, the mapping between respondent categories (research field, career level) and the population (HESA) data was very approximate. While the sampling was conducted based on categories available in the population data, the instrument used different sets of categories in order to be consistent with previous surveys [Norris-2022;@HughesNoehrer-2024]. Because the survey was anonymous, we had to rely on respondent self-report for these categories and therefore had to map from those categories to the HESA categories, and this mapping was very approximate and uncertain. We therefore have no strong evidence that the sampling method has produced a more representative sample than that achieved through open sampling. If that is a true reflection of responses, then it would suggest that researchers' intrinsic motivations to respond remain the main factor in whether they do respond. This would imply that we can expect extrinsic factors such as targeted and personalised sampling to have only limited effects unless adopted in a stronger way than done in this survey, for example by having identifiable responses and thereby being able to personalise non-response follow-up actions.
+
+One possible next step would be to weight the responses according to the population distribution and provide a re-analysis based on those weighted responses. UKRN may undertake that re-analysis if we have capacity.
+
+#### Reflexivity statement
+
+The 2025 ORP survey was designed, developed and delivered by a team based across UK higher education institutions and involved in the UKRN's ORP. This means all team members engage in ongoing work to 'accelerate the adoption of high-quality OR practices' (UKRN, no date) and were therefore likely to have positive views on OR and its practices. Throughout the design process, team members reflected and consulted on possible limitations to survey questions and options, aiming to be as inclusive as possible across all disciplines, methods, and researchers, whilst acknowledging limitations in the output data that would be comparable to national data and previous surveys.
+
+### Conclusions
+
+The 2025 ORP survey situates UK efforts to advance OR within a maturing global movement. Awareness and uptake of foundational practices are now widespread, yet deeper cultural and systemic changes, particularly around researchers' and research assessment, incentives, and the adaptation of OR principles to different epistemic traditions, remain works in progress. The findings, therefore, both validate the trajectory of the ORP and highlight areas where further coordination, evidence sharing, and institutional commitment are required to ensure that OR becomes the default across all disciplines and career levels.
+
+### References
+
+::: {#refs}
+:::
+
+
+## Supplementary information
+
+Generative AI was employed to assist in developing initial concepts for the Executive Summary (Microsoft Copilot GPT-4) and Discussion section (ChatGPT-5); all final interpretations and conclusions are the author's own.
+
+### Ethics
+
+The study had ethics approval from the University of Bristol, reference 23351. Some of the participating institutions secured their own supplementary ethics approvals.
+
+### Protocol
+
+The protocol for the ORP Evaluation Design project, of which the survey reported here is a part, is available at <https://oercommons.org/courses/orp-evaluation-protocol-2?__hub_id=179>
+
+### Materials and data
+
+Study materials, including the survey instrument, consent forms and information sheets are available at <https://oercommons.org/courseware/lesson/137449?__hub_id=179>
+
+### Annex {#sec-annex}
+
+The sample representativeness analysis is available here: <https://osf.io/k8rtz/files/xegm3>
+
+{{< pagebreak >}}
+
+
+
+## Data Visualisation
+
+```{r, setup}
+#| include: false
+library(tidyverse) # data processing and visualisation
+library(DT) # for interactive tables
+library(ggraph) # for network plots
+library(igraph) # for network plots
+
+source("scripts/plot-funcs.R")
+source("scripts/levels.R")
+
+ukrn <- list(
+  purple = "#4E4F86", 
+  green = "#13A89E", 
+  pink = "#F2008C", 
+  dark = "#28295B"
+)
+yes <- ukrn$purple
+no <- ukrn$green
+
+theme_set(theme_light(12))
+theme_replace(title = element_text(colour = ukrn$dark),
+              strip.background = element_rect(fill = ukrn$dark),
+              plot.margin = unit(c(0.2, 0.5, 0.1, 0.2), "cm"),
+              panel.grid.major.y = element_blank(),
+              legend.position = "bottom",
+              panel.spacing.x = unit(0.8, "cm"))
+
+inst_cols <- cols(
+  Institution = col_factor(institutions)
+)
+inst_data <- read_csv("data/_inst_data.csv", col_types = inst_cols)
+
+data_cols <- cols(
+  Career_level = col_factor(names(career_levels)),
+  Research_approach = col_factor(names(qq)),
+  Discipline = col_factor(names(disciplines)),
+  Discipline_category = col_factor(c(
+    "Arts and Humanities",
+    "Social Sciences",
+    "Health & Biological Sciences",
+    "Physical Sciences"))
+)
+data <- read_csv("data/ukrn_survey_2025_all.csv", 
+                 col_types = data_cols)
+```
+
+### Information about Respondents
+
+```{r}
+number_of_disciplines <- unique(data$Discipline) |> 
+  setdiff(na_text) |> # exclude missing
+  length()
+```
+
+Our `r nrow(data)` respondents come from `r number_of_disciplines` disciplines.
+
+
+#### Institutions
+
+```{r}
+#| label: fig-inst
+#| fig-cap: !expr paste0("Horizontal bar chart showing the number of survey responses from each institution (total n=", nrow(data), "), and the percentage of total survey responses each institution represents.")
+
+title <- paste0("Institutions (n=", sum(inst_data$n), ")")
+
+n_plot(inst_data, "Institution", title, 
+            ylim = c(0, .2), ytext = .018)
+```
+
+
+#### Research Approach
+
+```{r}
+#| label: data-qq
+qq_data <- count(data, Research_approach)
+```
+
+
+```{r}
+#| label: fig-qq
+#| fig-cap: !expr paste0("Horizontal bar chart showing the number of respondents by research approach (qualitative, quantitative, both, or neither/unsure), and the percentage of total survey responses each approach represents (total n=", sum(qq_data$n), "). Each respondent selected one option. Respondents who did not select any answer are represented in the '(Missing)' bar.")
+#| fig-width: 8
+#| fig-height: 3
+
+title <- paste0("Research Approach (n=", sum(qq_data$n), ")")
+
+n_plot(qq_data, "Research_approach", title,
+            ylim = c(0, .4), ytext = .03)
+```
+
+
+
+#### Detailed Research Method
+
+```{r}
+#| label: data-meth
+meth_data <- data |>
+  select(ResponseId, starts_with("Methods_")) |>
+  pivot_longer(cols = starts_with("Methods_"), 
+               names_prefix = "Methods_") |>
+  mutate(name = gsub("_", " ", x = name),
+         name = factor(name, meth_levels))
+```
+
+
+```{r}
+#| label: fig-meth
+#| fig-cap: !expr paste0("Horizontal bar chart showing the number and percentage of respondents who identified as using each research method. Respondents could select multiple methods from a list including all those listed on the Y-axis of this figure. Percentages are calculated based on the number of respondents who answered this question, n=", nrow(data), " (not the total number of selections, n=", nrow(meth_data), ").")
+
+meth_summary <- meth_data |>
+  summarise(n = sum(value), .by = name)
+
+title <- paste0("Methods (n=", nrow(data), ")")
+
+n_plot(meth_summary, "name", title, total = nrow(data),
+            ylim = c(0, .601), ytext = .052)
+```
+
+
+
+```{r}
+#| label: fig-meth-connect
+#| fig-cap: "Network diagram showing the weight of connections between the response options for different research methods. Each coloured line connecting two research methods represents the number of respondents who reported they used both of those methods. Note this is raw numbers, rather than percentages. Yellow (lighter) lines represent larger numbers, and purple (darker) lines represent smaller numbers."
+#| fig-width: 8
+#| fig-height: 4
+
+# process methods for network plot
+meth_connect <- meth_data |>
+  filter(value) |>
+  filter(name != "Other") |>
+  mutate(name = factor(name, levels(name), 
+                         levels(name) |> 
+                          gsub(" / ", " /  \n  ", x = _) |>
+                          gsub("Observational methods", 
+                               "Observational  \n  methods", x = _) |>
+                          gsub("Practise-based research", 
+                               "Practise-based  \n  research", x = _) |>
+                          paste0("  ", x = _, "  ")))
+
+edges <- meth_connect |>
+  inner_join(meth_connect, by = "ResponseId", 
+             relationship = "many-to-many") |>
+  filter(as.integer(name.x) < as.integer(name.y)) |> 
+  count(name.x, name.y, name = "weight")
+
+g <- igraph::graph_from_data_frame(edges, directed = FALSE)
+
+ggraph(g, layout = "circle") +
+  geom_edge_link(aes(color = weight), width = 2, alpha = 0.5) +
+  geom_node_point(size = 5, color = ukrn$pink) +
+  geom_node_text(aes(label = name, 
+                    # angle = -((-node_angle(x, y) + 90) %% 180) + 90, 
+                     hjust = case_when(
+                       name == "Other" ~ 0,
+                       name == "  Theoretical research  " ~ 0,
+                       name == "  Survey based methods  " ~ 0,
+                       node_angle(x, y) > 180 ~ 1, 
+                       .default = 0
+                     )), 
+                 nudge_y = 0,
+                 vjust = 0.5, size = 4) +
+  scale_edge_colour_viridis("Number of\nresponses",
+                            guide = guide_legend(direction = "vertical"), 
+                            option = "D", breaks = seq(0, 400, 50)) +
+  theme_void() +
+  theme(plot.margin = margin(0, 50, 0, 100),
+        legend.margin = margin(0, 0, 0, 75)) +
+  coord_cartesian(clip = "off")
+```
+
+
+```{r}
+#| label: fig-meth-total
+#| fig-cap: "Histogram showing the number of detailed research methods that various participants reported they used (participants could choose multiple). Note that most participants chose more than one detailed research method, meaning that any other findings in this report that represent individual detailed research methods will include a large number of respondents who use multiple methods."
+
+meth_data |>
+  filter(value) |>
+  count(ResponseId) |>
+  ggplot(aes(x = n)) +
+  geom_histogram(binwidth = 1, color = "black", fill = ukrn$purple) +
+  scale_x_continuous("Number of detailed research methods chosen", breaks = 0:20) +
+  labs(y = "Number of participants")
+```
+
+
+#### Disciplines 
+
+```{r}
+#| label: data-disc
+disc_data <- count(data, Discipline)
+```
+
+
+```{r}
+#| label: fig-disc
+#| fig-cap: !expr paste0("Horizontal bar chart showing the number of survey respondents by research discipline (total n=", nrow(data), "), and the percentage of total survey responses each discipline represents. Respondents were instructed to select the discipline that best fit them, from a list adapted from the UK Higher Education Statistics Agency.")
+
+title <- paste0("Disciplines (n=", sum(disc_data$n), ")")
+gp <- grid::gpar(cex = 0.85, lineheight = 0.8, col=ukrn$dark)
+label_y <- -105
+
+n_plot(disc_data, "Discipline", title, 
+            ylim = c(0, .16), ytext = .016) |>
+  disc_type(gp, label_y)
+      
+```
+
+
+#### Career Level 
+
+```{r}
+#| label: data-career
+career_data <- count(data, Career_level)
+```
+
+
+```{r}
+#| label: fig-career
+#| fig-cap: "Horizontal bar chart showing the number of respondents for each career level, and the percentage of total survey responses each career level represents. Categories include Junior (e.g., PhD students, early career postdocs), Mid (e.g., lecturers, lab managers), and Senior (e.g., professors, senior lecturers). Respondents who did not select any answer are represented in the '(Missing)' bar."
+#| fig-width: 8
+#| fig-height: 2.5
+
+title <- paste0("Career Level (n=", sum(career_data$n), ")")
+
+n_plot(career_data, "Career_level", title, 
+       ylim = c(0, .4), ytext = .03)
+  
+```
+
+
+#### Career Level by Discipline
+
+```{r}
+#| label: fig-career-disc
+#| fig-cap: "Panelled horizontal bar charts showing the distribution of career levels (Junior, Mid, Senior) within each discipline (one discipline per panel). Bars, with superimposed percentages, indicate the proportion of respondents at each career stage within that discipline. Total number of respondents in each discipline is indicated in the title of each panel"
+#| fig-width: 10
+#| fig-height: 8
+
+career_disc <- data |>
+  count(Career_level, Discipline) |>
+  mutate(pcnt = n/sum(n),
+         label = paste0(round(pcnt*100), "%"),
+         .by = Discipline) |>
+  arrange(Discipline, Career_level) |> 
+  filter(Discipline != na_text, 
+         Career_level != na_text) |>
+  mutate(Career_level = factor(Career_level)) |>
+  mutate(total = sum(n), .by = Discipline) |>
+  mutate(title = paste0(Discipline, " (n=", max(total), ")"), 
+         .by = Discipline) 
+
+title <- career_disc |>
+  select(Discipline, title) |>
+  unique() 
+title <- setNames(title$title, title$Discipline)
+
+career_disc |>
+  table_panel("Career_level", 
+                   "Career Level by Discipline", 
+                   "Discipline", 3, ylim = c(0, 1), title, 
+              ytext = .15)
+```
+
+
+### Awareness of Open Research Practices
+
+#### Awareness Overall 
+
+```{r}
+#| label: data-aware
+aware_data <- data |>
+  select(ResponseId:Discipline_category, 
+         starts_with("Awareness_"), 
+         starts_with("Methods_")) |>
+  pivot_longer(cols = starts_with("Awareness_"), 
+               names_prefix = "Awareness_") |>
+  filter(!is.na(value)) |>
+  mutate(value = recode(value, Yes = 1, No = 0),
+         name = gsub("_", " ", x = name),
+         name = factor(name, practices))
+
+aware_all <- aware_data |>
+  count(name, value) |>
+  mutate(total = sum(n), .by = name)
+```
+
+
+```{r}
+#| label: fig-aware
+#| fig-cap: !expr paste0("Horizontal stacked bar chart showing the percentages of respondents who were aware or unaware of each open research practice (percentage aware is superimposed on each purple bar). (Note that exact numbers of respondents varied for each research practice, from n=", min(aware_all$total), " to n=", max(aware_all$total), ".")
+
+title <- paste0("Awareness (n=", max(aware_all$total), ")")
+
+label_plot2(aware_all, "name", title, "label", 
+              fill_labels = c("Unaware", "Aware"))
+```
+
+
+#### Awareness by Research Approach
+
+```{r}
+#| label: fig-aware-qq
+#| fig-cap: "Panelled horizontal stacked bar chart showing the percentages of respondents who were aware or unaware of each open research practice, on a separate panel for each research approach (qualitative, quantitative, both, or neither/unsure). Percentage aware is superimposed on each purple bar. The number of total respondents in each research approach is indicated on the panel headings."
+#| fig-width: 8
+#| fig-height: 8
+
+table_panel2(aware_data, 
+             title = "Awareness by Research Approach", 
+             by = "Research_approach", 
+             ncol = 2, 
+             fill_labels = c("Unaware", "Aware"))
+```
+
+
+#### Awareness by Detailed Research Method 
+
+```{r}
+#| label: data-aware-meth
+
+aware_meth <- aware_data |>
+  pivot_longer(cols = starts_with("Methods_"), 
+               names_to = "method", 
+               names_prefix = "Methods_", 
+               values_to = "method_val") |>
+  select(method, method_val, name, value) |>
+  filter(method_val) |>
+  mutate(method = gsub("_", " ", method),
+         method = factor(method, meth_levels)) |>
+  count(name, method, value) |>
+  mutate(total = sum(n), .by = c(name, method)) |>
+  mutate(pcnt = n/total, 
+         label = round(pcnt*100) |> paste0("%"))
+```
+
+::: {#fig-aware-meth}
+
+```{r}
+#| label: ifig-aware-meth
+#| results: 'asis'
+
+# separate plots by method
+n_plot_tabs2(data = aware_meth,
+               x = "name", 
+               title = "Awareness by Method", 
+               by = "method", 
+               add_total = TRUE)
+```
+
+Horizontal stacked bar charts showing the percentages of respondents who were aware or unaware of each open research practice, in a separate chart for each detailed research method. Percentage aware is superimposed on each purple bar. The number of total respondents in each detailed research method is indicated in the chart headings. Click on the tabs below to view the chart for a given detailed research method.
+
+:::
+
+
+:::{#fig-aware-method}
+
+```{r}
+#| label: ifig-aware-method
+#| results: 'asis'
+
+# separate plots by practice
+n_plot_tabs2(data = aware_meth,
+             x = "method", 
+             title = "Awareness by Method", 
+             by = "name", 
+             add_total = TRUE)
+```
+
+Horizontal stacked bar charts showing the percentages of respondents from each detailed research method who were aware or unaware of a given open research practice, in a separate chart for each open research practice. Percentage aware is superimposed on each purple bar. Click on the tabs below to view the chart for a given open research practice.
+
+:::
+
+
+#### Awareness by Discipline 
+
+```{r}
+#| label: data-aware-disc
+aware_disc <- aware_data |>
+  count(name, Discipline, Discipline_category, value) |>
+  mutate(total = sum(n), 
+         .by = c(name, Discipline, Discipline_category)) |>
+  mutate(pcnt = n/total, 
+         label = round(pcnt*100) |> paste0("%"))
+```
+
+::: {#fig-aware-disc}
+
+```{r, results='asis'}
+#| label: ifig-aware-disc
+n_plot_tabs2(data = aware_disc, 
+             x = "name", 
+             title = "Awareness by Discipline", 
+             by = "Discipline", 
+             add_total = TRUE)
+```
+
+Horizontal stacked bar charts showing the percentages of respondents who were aware or unaware of each open research practice, in a separate chart for each discipline. Percentage aware is superimposed on each purple bar. The number of total respondents in each discipline is indicated in the chart headings. Click on the tabs below to view the chart for a given discipline.
+
+:::
+
+#### Awareness by Discipline by Practice
+
+::: {#fig-aware-practice}
+
+```{r, results='asis'}
+#| label: ifig-aware-practice
+
+n_plot_tabs2disc(data = aware_disc, 
+                 x = "Discipline", 
+                 title = "Awareness by Practice", 
+                 by = "name", 
+                 add_total = FALSE)
+```
+
+Horizontal stacked bar charts showing the percentages of respondents from each discipline who were aware or unaware of a given open research practice, in a separate chart for each open research practice. Percentage aware is superimposed on each purple bar. Disciplines are arranged on the Y-axis in four groups (top to bottom): Arts and Humanities, Social Sciences, Health and Biological Sciences, Physical Sciences. The list of disciplines was adapted from the UK Higher Education Statistics Agency. Click on the tabs below to view the chart for a given open research practice.
+:::
+
+
+#### Awareness by Career Level 
+
+```{r}
+#| label: fig-aware-career
+#| fig-cap: "Panelled horizontal stacked bar chart showing the percentages of respondents who were aware or unaware of each open research practice, on a separate panel for each career level (Junior, Mid, Senior). Percentage aware is superimposed on each purple bar. The number of total respondents in each career level is indicated on the panel headings."
+
+table_panel2(data = aware_data, 
+             title = "Awareness by Career Level", 
+             by = "Career_level", 
+             ncol = 3)
+```
+
+
+### Use of Open Research Practices
+
+```{r}
+#| label: data-use
+use_cols <- c("grey", 
+              ukrn$green, 
+              ukrn$purple, 
+              ukrn$dark)
+  
+use_labels <- c("I use it often", 
+                "I have used it",
+                "I have NOT used it",
+                "Not applicable to my research")
+
+use_data <- data |>
+  select(ResponseId:Discipline_category, 
+         starts_with("Use_"), 
+         starts_with("Methods_")) |>
+  pivot_longer(cols = starts_with("Use_"), 
+               names_prefix = "Use_") |>
+  filter(!is.na(value)) |>
+  mutate(value = factor(value, use_labels, 
+                        gsub(" to my research", "", use_labels)),
+         name = gsub("_", " ", name) |> factor(practices))
+
+use_all <- use_data |>
+  count(name, value) |>
+  mutate(pcnt = n/sum(n), .by = name, name = fct_rev(name)) |>
+  mutate(total = sum(n), .by = name) 
+```
+
+
+#### Use Overall
+
+See @tbl-use for a tabular representation.
+
+
+```{r}
+#| label: fig-use
+#| fig-cap: !expr 'paste0("Horizontal stacked bar chart showing whether, and how often, respondents have used each open research practice. Each bar is segmented by the percentages of respondents who answered each option: I use it often / I have used it / I have not used it / Not applicable to my research. (Note that exact numbers of respondents varied for each research practice, from n=", min(use_all$total), " to n=", max(use_all$total), ".)")'
+
+ggplot(use_all, aes(x = name, y = pcnt, fill = fct_rev(value))) +
+  geom_col() +
+  coord_flip(clip = 'off') +
+  scale_y_continuous(expand = expansion(c(0)),
+                     labels = scales::label_percent()) +
+  scale_fill_manual(values = use_cols,
+                    guide=guide_legend(reverse=T)) +
+  labs(x = NULL,
+       y = NULL,
+       fill = NULL,
+       title = paste0("Use (n=", max(use_all$total), ")")) +
+  theme(
+    plot.margin = unit(c(0.2, 0.5, 0.1, 0.2), "cm"),
+    panel.grid.major.y = element_blank(),
+    legend.position = "bottom",
+  )
+```
+
+#### Use by Research Approach
+
+See @tbl-use-qq for a tabular representation.
+
+```{r}
+#| label: fig-use-qq
+#| fig-cap: "Panelled horizontal stacked bar charts showing whether, and how often, respondents have used each open research practice, on a separate panel for each research approach (qualitative, quantitative, both, or neither/unsure - one answer selected per respondent). Each bar is segmented by the percentages of respondents who answered each option: I use it often / I have used it / I have not used it / Not applicable. The number of total respondents in each research approach is indicated on the panel headings."
+#| fig-height: 6
+#| fig-width: 8
+
+use_qq <- use_data |>
+  filter(Research_approach != na_text) |>
+  count(name, Research_approach, value) |>
+  mutate(total = sum(n),
+         pcnt = n/sum(n), .by = c(name, Research_approach)) |>
+  mutate(name = fct_rev(name))
+
+table_panel5(use_qq, "name", 
+                  "Use by Research Approach",
+                  "Research_approach", 2, use_cols)
+```
+
+
+```{r}
+#| label: fig-use-practice-binary
+#| fig-cap: "Panelled horizontal stacked bar charts showing percentages of respondents from each research approach who have or have not used a given open research practice, on a separate panel for each open research practice. The purple bars combine responses of 'I use it often' and 'I have used it'. Green bars represent responses of 'I have not used it.' Responses of 'not applicable' were excluded from this chart."
+
+use_practice_bin <- use_data |>
+  mutate(use = case_match(value,
+                          "I use it often" ~ "Used", 
+                          "I have used it" ~ "Used",
+                          "I have NOT used it" ~ "Not Used",
+                          # set to "Not Used" if you want to add in NA
+                          "Not applicable" ~ NA)) |>
+  filter(Research_approach != na_text, !is.na(use)) |>
+  count(name, Research_approach, use) |>
+  mutate(pcnt = n/sum(n), .by = c(name, Research_approach)) 
+
+use_practice_bin |>
+  ggplot(aes(x = fct_rev(Research_approach), y = pcnt, fill = use)) +
+  geom_col() +
+  facet_wrap(~name, ncol = 3) +
+  coord_flip(clip = 'off') +
+  scale_y_continuous(expand = expansion(c(0)),
+                     labels = scales::label_percent()) +
+  scale_fill_manual(values = c(no, yes),
+                    guide=guide_legend(position = "inside", reverse=T)) +
+  labs(x = NULL,
+       y = NULL,
+       fill = NULL,
+       title = "Use by Open Research Practice") +
+  theme(panel.spacing.y = unit(0.5, "cm"), 
+    plot.margin = unit(c(0.2, 0.5, 0.1, 0.2), "cm"),
+    panel.grid.major.y = element_blank(),
+    legend.text = element_text(size = 14),
+    legend.position.inside = c(.85, .08)
+  )
+```
+
+
+#### Use by Detailed Research Method 
+
+See @tbl-use-meth for a tabular representation.
+
+```{r}
+#| label: data-use-meth
+use_meth <- use_data |>
+  pivot_longer(cols = starts_with("Methods_"), 
+               names_prefix = "Methods_", 
+               names_to = "method", 
+               values_to = "method_val") |>
+  filter(method_val) |>
+  select(method, name, value) |>
+  mutate(method = gsub("_", " ", method),
+         method = factor(method, meth_levels)) |>
+  mutate(total = n(), .by = c(method, name)) |>
+  count(method, name, value, total) |>
+  mutate(pcnt = n/total)
+```
+
+
+:::{#fig-use-meth}
+
+```{r}
+#| label: ifig-use-meth
+#| results: 'asis'
+
+n_plot_use_tabs3(
+  data = use_meth,
+  by = "method",
+  use_cols = use_cols
+)
+```
+
+Horizontal stacked bar charts showing whether, and how often, respondents have used each open research practice, in a separate chart for each detailed research method. Each bar is segmented by the percentages of respondents who answered each option: I use it often / I have used it / I have not used it / Not applicable. The number of total respondents in each detailed research method is indicated in the chart headings. Click on the tabs below to view the chart for a given detailed research method.
+
+:::
+
+#### Use by Discipline
+
+See @tbl-use-disc for a tabular representation.
+
+:::{#fig-use-disc}
+
+```{r}
+#| label: ifig-use-disc
+#| results: 'asis'
+
+use_discipline <- use_data |>
+ # filter(Discipline != na_text) |>
+  count(name, Discipline, value) |>
+  mutate(total = sum(n),
+         pcnt = n/sum(n), .by = c(name, Discipline))
+
+disc <- names(disciplines)
+names(disc) <- disc
+
+plots <- lapply(disc, \(discipline) {
+  d <- use_discipline |>
+    filter(Discipline == discipline) 
+  
+  if (nrow(d) == 0) return(NULL)
+  total_n <- max(d$total, na.rm = TRUE) |> unique() |> paste(collapse = "-")
+  
+  d |>
+    ggplot(aes(x = fct_rev(name), y = pcnt, fill = fct_rev(value))) +
+    geom_col() +
+    coord_flip(clip = 'off') +
+    scale_y_continuous(expand = expansion(c(0)),
+                       labels = scales::label_percent()) +
+    scale_fill_manual(values = use_cols,
+                      guide=guide_legend(reverse=T)) +
+    labs(x = NULL,
+         y = NULL,
+         fill = NULL,
+         alt = "",
+         title = paste0(discipline, " (n=", total_n, ")")) +
+    theme(
+      plot.margin = unit(c(0.2, 0.5, 0.1, 0.2), "cm"),
+      panel.grid.major.y = element_blank(),
+      legend.position = "bottom"
+    )
+})
+
+cat("::: {.panel-tabset}\n\n")
+  
+for (i in seq_along(plots)) {
+  if (!is.null(plots[[i]])) {
+    cat("##", names(disciplines)[i], "\n\n")
+    print(plots[[i]])
+    cat("\n\n")
+  }
+}
+
+cat(":::\n\n")
+```
+
+
+Horizontal stacked bar charts showing whether, and how often, respondents have used each open research practice, in a separate chart for each discipline. Each bar is segmented by the percentages of respondents who answered each option: I use it often / I have used it / I have not used it / Not applicable. The number of total respondents in each discipline is indicated  in the chart headings. Click on the tabs below to view the chart for a given discipline. Note, not all disciplines have data; blank charts are omitted.
+
+:::
+
+
+#### Use by Discipline by Practice
+
+See @tbl-use-disc for a tabular representation.
+
+:::{#fig-use-disc-pract}
+
+```{r}
+#| label: ifig-use-disc-pract
+#| results: 'asis'
+
+gp <- grid::gpar(cex = 0.85, lineheight = 0.8, col=ukrn$dark)
+label_y <- -0.55
+
+groups <- unique(use_discipline$name) |> sort()
+  
+plots <- lapply(groups, \(practice) {
+  d <- use_discipline |>
+    filter(name == practice) 
+  
+  if (nrow(d) == 0) return(NULL)
+  total_n <- sum(d$n, na.rm = TRUE)
+  
+  g <- d |>
+    ggplot(aes(x = fct_rev(Discipline), y = pcnt, fill = fct_rev(value))) +
+    geom_col() +
+    coord_flip(clip = 'off') +
+    scale_y_continuous(expand = expansion(c(0)),
+                       labels = scales::label_percent()) +
+    scale_fill_manual(values = use_cols,
+                      guide=guide_legend(reverse=T)) +
+    labs(x = NULL,
+         y = NULL,
+         fill = NULL,
+         alt = "",
+         title = paste0(practice, " (n=", total_n, ")")) +
+    theme(
+      plot.margin = unit(c(0, 0.5, 0, 1.4), "cm"), 
+      aspect.ratio = 1,
+      panel.grid.major.y = element_blank(),
+      legend.position = "bottom"
+    )
+  
+  disc_type(g, gp, label_y)
+})
+
+cat("::: {.panel-tabset}\n\n")
+  
+for (i in seq_along(plots)) {
+  if (!is.null(plots[[i]])) {
+    cat("##", as.character(groups[[i]]), "\n\n")
+    print(plots[[i]])
+    cat("\n\n")
+  }
+}
+
+cat(":::\n\n")
+
+```
+
+Horizontal stacked bar charts showing whether, and how often, respondents in each discipline have used each open research practice, in a separate chart for each practice. Each bar is segmented by the percentages of respondents who answered each option: I use it often / I have used it / I have not used it / Not applicable. Click on the tabs below to view the chart for a given practice. 
+
+:::
+
+#### Use by Career Level 
+
+See @tbl-use-career for a tabular representation.
+
+```{r}
+#| label: fig-use-career
+#| fig-cap: "Panelled horizontal stacked bar charts showing whether, and how often, respondents have used each open research practice, in a separate panel for each career level (Junior, Mid, Senior). Each bar is segmented by the percentages of respondents who answered each option: I use it often / I have used it / I have not used it / Not applicable. The number of total respondents in each career level is indicated on the panel headings."
+
+use_career <- use_data |>
+  filter(Career_level != na_text) |>
+  count(name, Career_level, value) |>
+  mutate(total = sum(n), 
+         pcnt = n/sum(n), 
+         .by = c(name, Career_level))
+
+title <- use_career |>
+  mutate(title = paste0(Career_level, " (n=", max(total), ")"), 
+         .by = Career_level) |>
+  select(Career_level, title) |>
+  unique() 
+career_title <- setNames(title$title, title$Career_level)
+
+use_career |>
+  ggplot(aes(x = fct_rev(name), y = pcnt, fill = fct_rev(value))) +
+  geom_col() +
+  facet_wrap(~Career_level, labeller = as_labeller(career_title)) +
+  coord_flip(clip = 'off') +
+  scale_y_continuous(expand = expansion(c(0)),
+                     labels = scales::label_percent()) +
+  scale_fill_manual(values = use_cols,
+                    guide=guide_legend(reverse=T)) +
+  labs(x = NULL,
+       y = NULL,
+       fill = NULL,
+        title = "Use by Career Level")
+```
+
+
+
+### Attitudes
+
+```{r}
+#| label: data-attitudes
+attitude_cols <- c("#336b67", 
+                   ukrn$green, 
+                   "grey", 
+                   ukrn$purple, 
+                   ukrn$dark)
+
+attitude_labels <- c("Strongly agree", 
+                     "Somewhat agree", 
+                     "Neutral", 
+                     "Somewhat disagree", 
+                     "Strongly disagree")
+
+attitudes_data <- data |>
+  select(ResponseId:Discipline_category, 
+         starts_with("Attitudes_"), 
+         starts_with("Methods_")) |>
+  pivot_longer(cols = starts_with("Attitudes_"), 
+               names_prefix = "Attitudes_") |>
+  mutate(name = gsub("_", " ", name),
+         name = factor(name, attitude_levels)) |>
+  filter(!is.na(value), value != "Not applicable") |>
+  mutate(value = factor(value, attitude_labels))
+```
+
+```{r}
+# counts
+
+n_attitudes <- unique(attitudes_data$ResponseId) |> length()
+
+# responses to Assessment that are "Not applicable" (not NA)
+n_assessment_na <- data |>
+  filter(Attitudes_Assessment == "Not applicable") |>
+  nrow()
+
+# valid responses to Assessment
+n_assessment <- data |>
+  filter(!is.na(Attitudes_Assessment),
+         Attitudes_Assessment != "Not applicable") |>
+  nrow()
+```
+
+
+Respondents were asked to rate their agreement (Strongly agree / Somewhat agree / Neutral / Somewhat disagree / Strongly disagree) with nine statements representing various attitudes about open research practices. The statements are listed below; a one-word label has been added at the beginning of each, to use on the Y-axes of the figures in this section. 
+
+* Note that for the question on Assessment, respondents were given a 'not applicable' choice as well. These responses (n= `r n_assessment_na`) were excluded from the figures below.
+
+1. Usefulness: I think Open Research is useful for researchers like me 
+2. Participation: I would like to participate in Open Research practices more than I already do 
+3. Confidence: I am confident I know how to use Open Research practices in my research 
+4. Comprehension: I understand which Open Research practices would be relevant to use in my research 
+5. Support: I have support from my line manager/supervisor to use Open Research practices in my research 
+6. Training: My institution provides the training I need for best practice in Open Research 
+7. Norms: Open Research practices are expected in my research community (e.g., among my research group, department, or peers) 
+8. Resources: I know where to go to learn more about Open Research practices 
+9. Assessment: I have used engagement with Open Research as a criterion when assessing someone else for hiring or promotion, or had engagement with Open Research used as a criterion in my own assessment at my institution 
+
+
+
+#### Attitudes Overall
+
+See @tbl-attitudes for a tabular representation.
+
+```{r}
+#| label: fig-attitudes
+#| fig-cap: "Horizontal stacked bar chart showing participants' levels of agreement with each of the nine attitude statements on open research practices. Each bar is segmented by the percentages of respondents who answered each option: Strongly agree / Somewhat agree / Neutral / Somewhat disagree / Strongly disagree. The number of total respondents is indicated in the chart heading. See the beginning of this section for the full statements."
+
+attitude_levels2 <- attitude_levels
+attitude_levels2[[9]] <- paste0("*", attitude_levels[[9]])
+
+attitudes_all <- attitudes_data |>
+  count(name, value) |>
+  mutate(pcnt = n/sum(n), 
+         .by = name) 
+
+title <- paste0("Attitudes (n=", n_attitudes, ", for Assessment n=", n_assessment, "*)")
+
+attitudes_all |>
+  mutate(name = factor(name, attitude_levels, attitude_levels2)) |>
+  ggplot(aes(x = fct_rev(name), y = pcnt, fill = fct_rev(value))) +
+  geom_col() +
+  coord_flip(clip = 'off') +
+  scale_y_continuous(expand = expansion(c(0)),
+                     labels = scales::label_percent()) +
+  scale_fill_manual(values = attitude_cols,
+                    guide=guide_legend(reverse=T)) +
+  labs(x = NULL,
+       y = NULL,
+       fill = NULL,
+       title = title) +
+  theme(
+    legend.text = element_text(size = 9)
+  )
+```
+
+#### Attitudes by Research Approach
+
+See @tbl-attitudes-qq for a tabular representation.
+
+```{r}
+#| label: fig-attitudes-qq
+#| fig-cap: "Panelled horizontal stacked bar chart showing participants' levels of agreement with each of the nine attitude statements on open research practices, in a separate chart for each research approach (qualitative, quantitative, both, or neither/unsure - one answer selected per respondent). Each bar is segmented by the percentages of respondents who answered each option: Strongly agree / Somewhat agree / Neutral / Somewhat disagree / Strongly disagree. The number of total respondents is indicated in each chart heading. See the beginning of this section for the full statements."
+
+attitudes_qq <- attitudes_data |>
+  filter(Research_approach != na_text) |>
+  count(name, value, Research_approach) |>
+  mutate(total = sum(n),
+         pcnt = n/sum(n), 
+         .by = c(name, Research_approach)) |>
+  mutate(name = fct_rev(name))
+
+table_panel5(attitudes_qq, "name", 
+                  "Attitudes by Research Approach",
+                  "Research_approach", 2, attitude_cols)
+```
+
+
+
+#### Attitudes by Discipline 
+
+See @tbl-attitudes-disc for a tabular representation.
+
+:::{#fig-attitudes-disc}
+
+```{r}
+#| label: ifig-attitudes-disc
+#| results: 'asis'
+
+attitudes_disc <- attitudes_data |>
+  filter(Discipline != na_text) |>
+  count(name, Discipline, value) |>
+  mutate(total = sum(n),
+         pcnt = n/sum(n), .by = c(name, Discipline))
+
+disc <- names(disciplines)
+names(disc) <- disc
+
+plots <- lapply(disc, \(discipline) {
+  d <- attitudes_disc |>
+    filter(Discipline == discipline) 
+  
+  if (nrow(d) == 0) return(NULL)
+  total_n <- max(d$total, na.rm = TRUE) |> unique() |> paste(collapse = "-")
+  
+  d |>
+    ggplot(aes(x = fct_rev(name), y = pcnt, fill = fct_rev(value))) +
+    geom_col() +
+    coord_flip(clip = 'off') +
+    scale_y_continuous(expand = expansion(c(0)),
+                       labels = scales::label_percent()) +
+    scale_fill_manual(values = attitude_cols,
+                      guide=guide_legend(reverse=T)) +
+    labs(x = NULL,
+         y = NULL,
+         fill = NULL,
+         alt = "",
+         title = paste0(discipline, " (n=", total_n, ")"))
+})
+
+cat("::: {.panel-tabset}\n\n")
+  
+for (i in seq_along(plots)) {
+  if (!is.null(plots[[i]])) {
+    cat("##", names(disciplines)[i], "\n\n")
+    print(plots[[i]])
+    cat("\n\n")
+  }
+}
+
+cat(":::\n\n")
+```
+
+Horizontal stacked bar charts showing participants' levels of agreement with each of the nine attitude statements on open research practices, in a separate chart for each discipline. Each bar is segmented by the percentages of respondents who answered each option: Strongly agree / Somewhat agree / Neutral / Somewhat disagree / Strongly disagree - one answer selected per respondent. The number of total respondents in the discipline is indicated in each chart heading. See the beginning of this section for the full statements. Click on the tabs below to view the chart for a given discipline.
+
+::: 
+
+#### Attitudes by Career Level 
+
+See @tbl-attitudes-career for a tabular representation.
+
+```{r}
+#| label: fig-attitudes-career
+#| fig-cap: "Panelled horizontal stacked bar chart showing participants' levels of agreement with each of the nine attitude statements on open research practices, in a separate chart for each career level (Junior, Mid, Senior). Each bar is segmented by the percentages of respondents who answered each option: Strongly agree / Somewhat agree / Neutral / Somewhat disagree / Strongly disagree. The number of total respondents is indicated in each chart heading. See the beginning of this section for the full statements."
+#| fig-height: 5
+#| fig-width: 8
+
+attitudes_career <- attitudes_data |>
+  filter(Career_level != na_text) |>
+  count(name, Career_level, value) |>
+  mutate(total = sum(n),
+         pcnt = n/sum(n), 
+         .by = c(name, Career_level)) 
+
+title <- attitudes_career |>
+  mutate(title = paste0(Career_level, " (n=", max(total), ")"), 
+         .by = Career_level) |>
+  select(Career_level, title) |>
+  unique() 
+career_title <- setNames(title$title, title$Career_level)
+
+attitudes_career |>
+  ggplot(aes(x = fct_rev(name), y = pcnt, fill = fct_rev(value))) +
+  geom_col() +
+  facet_wrap(~Career_level, labeller = as_labeller(career_title)) +
+  coord_flip(clip = 'off') +
+  scale_y_continuous(expand = expansion(c(0)),
+                     labels = scales::label_percent()) +
+  scale_fill_manual(values = attitude_cols,
+                    guide=guide_legend(reverse=T)) +
+  labs(x = NULL,
+       y = NULL,
+       fill = NULL,
+       title = "Attitudes by Career Level")
+```
+
+### Facilitators
+
+Respondents were asked 'What would facilitators you adopt more open research practices?' and could select up to 5 of the response options. The 12 response options are listed below; a one-word label has been added at the beginning of each, to use on the Y-axes of the figures in this section.
+
+1. Guidance: More, or better organised, information and guidance
+2. Training: More training or mentorship
+3. Ethical clarity: Understanding ethical and legal issues (e.g. issues around data sharing)
+4. Prioritisation: Knowing what practices to prioritise / what really matters in my field
+5. Infrastructure: Tools and infrastructure (e.g. sufficient storage for open data)
+6. Time allocation: More time / workload dedicated to open research
+7. Incentives: Incentives (e.g., awards / funding) from my funder or institution
+8. Recognition: Recognition of Open Research in promotion and recruitment criteria
+9. Peer support: Support from colleagues (e.g., supervisors, students, technicians, administrators, librarians)
+10. Disciplinary norms: More norms and positive beliefs in my discipline encouraging open research
+11. No intention: Nothing, I do not plan to take up open research practices
+12. Already engaged: Nothing, I am already doing everything I think is applicable
+
+```{r}
+#| label: data-facilitators
+
+facilitators_data <- data |>
+  select(ResponseId:Discipline_category, 
+         starts_with("Facilitators_"), 
+         starts_with("Methods_")) |>
+  pivot_longer(cols = starts_with("Facilitators_"), 
+               names_prefix = "Facilitators_") |>
+  mutate(name = gsub("_", " ", name),
+         name = factor(name, facilitators_levels))
+
+fill_labels <- c("Unselected", "Selected")
+```
+
+
+#### Facilitators Overall
+
+See @tbl-facilitators for a tabular representation.
+
+```{r}
+#| label: fig-facilitators
+#| fig-cap: "Horizontal bar chart showing the percentage of respondents who indicated a given option would facilitate adopting more open research practices. Percentages are superimposed on each bar. Note that respondents were limited to ticking maximum 5 options. See the beginning of this section for the full text of response options."
+
+
+facilitators_all <- facilitators_data |>
+  count(name, value) |>
+  mutate(total = sum(n), pcnt = n/sum(n), 
+         label = round(pcnt*100) |> paste0("%"),
+         .by = name) |>
+  filter(value)
+
+title <- paste0("Facilitators (n=", max(facilitators_all$total), ")")
+label_plot(facilitators_all, "name", title, "label")
+```
+
+```{r}
+#| label: fig-facilitators-connect
+#| fig-cap: "Network diagram showing the weight of connections between the response options for different facilitators. Each coloured line connecting two facilitators represents the number of respondents who selected both facilitators. Note this is raw numbers, rather than percentages. Yellow (lighter) lines represent larger numbers, and purple (darker) lines represent smaller numbers."
+#| fig-width: 8
+#| fig-height: 4
+
+facilitators_connect <- facilitators_data |>
+  filter(value) |>
+  select(ResponseId, value = name) |>
+  mutate(value = factor(value, levels(value), 
+                        paste0("  ", levels(value), "  ")))
+
+edges <- facilitators_connect |>
+  inner_join(facilitators_connect, by = "ResponseId", 
+             relationship = "many-to-many") |>
+  filter(as.integer(value.x) < as.integer(value.y)) |> 
+  count(value.x, value.y, name = "weight")
+
+g <- igraph::graph_from_data_frame(edges, directed = FALSE)
+
+ggraph(g, layout = "circle") +
+  geom_edge_link(aes(color = weight), width = 2, alpha = 0.5) +
+  geom_node_point(size = 5, color = ukrn$pink) +
+  geom_node_text(aes(label = name, 
+                    # angle = -((-node_angle(x, y) + 90) %% 180) + 90, 
+                     hjust = case_when(
+                       name == "  No intention  " ~ 0,
+                       name == "  Already engaged  " ~ 0,
+                       name == "  Survey based methods  " ~ 0,
+                       node_angle(x, y) > 180 ~ 1, 
+                       .default = 0
+                     )), 
+                 nudge_y = 0,
+                 vjust = 0.5, size = 4) +
+  scale_edge_colour_viridis("Number of\nresponses",
+                            guide = guide_legend(direction = "vertical"), 
+                            option = "D", breaks = seq(0, 400, 50)) +
+  theme_void() +
+  theme(plot.margin = margin(0, 50, 0, 100),
+        legend.position. = "right",
+        legend.margin = margin(0, 0, 0, 75)) +
+  coord_cartesian(clip = "off")
+```
+
+#### Facilitators by Research Approach
+
+See @tbl-facilitators-qq for a tabular representation.
+
+```{r}
+#| label: fig-facilitators-qq
+#| fig-cap: "Panelled horizontal bar chart showing the percentage of respondents who  indicated that a given option would facilitate adopting more open research practices, on a separate panel for each research approach (qualitative, quantitative, both, or neither/unsure - one answer selected per respondent). Percentages are superimposed on each bar. The number of total respondents in each research approach is indicated on the panel headings. Note that respondents were limited to ticking maximum 5 options. See the beginning of this section for the full text of response options."
+#| fig-width: 8
+#| fig-height: 8
+
+facilitators_qq <- facilitators_data |>
+  count(name, Research_approach, value) |>
+  mutate(total = sum(n), .by = c(name, Research_approach)) |>
+  mutate(pcnt = n/total, 
+         label = round(pcnt*100) |> paste0("%")) |>
+  filter(value)
+
+title <- facilitators_qq |>
+  mutate(title = paste0(Research_approach, " (n=", max(total), ")"), 
+         .by = Research_approach) |>
+  select(Research_approach, title) |>
+  unique() 
+qq_title <- setNames(title$title, title$Research_approach)
+
+facilitators_qq |>
+  filter(!is.na(Research_approach), Research_approach != na_text) |>
+  table_panel("name", 
+              title = "Facilitators by Research Approach",
+              "Research_approach", 
+              2, c(0,1), qq_title)
+```
+
+#### Facilitators by Discipline
+
+See @tbl-facilitators-disc for a tabular representation.
+
+:::{#fig-facilitators-disc}
+
+```{r}
+#| label: ifig-facilitators-disc
+#| results: 'asis'
+
+disc <- names(disciplines)
+names(disc) <- disc
+
+plots <- lapply(disc, \(discipline) {
+  if (discipline == na_text) return(NULL)
+  
+  d <- facilitators_data |>
+    filter(Discipline == discipline) |>
+    count(name, value) |>
+    mutate(total = sum(n), 
+           pcnt = n/sum(n), 
+           label = round(pcnt*100) |> paste0("%"),
+           .by = c(name)) |>
+    filter(value | (!value & n == total)) |>
+    mutate(label = ifelse(value, label, "0%"),
+           n = ifelse(value, n, 0),
+           pcnt = ifelse(value, pcnt, 0))
+  
+  if (nrow(d) == 0) return(NULL)
+  total_n <- max(d$total, na.rm = TRUE) |> unique() |> paste(collapse = "-")
+  
+  title <- paste0(discipline, " (n=", total_n, ")")
+  label_plot(d, "name", title, "label")
+})
+
+cat("::: {.panel-tabset}\n\n")
+  
+for (i in seq_along(plots)) {
+  if (!is.null(plots[[i]])) {
+    cat("##", names(disciplines)[i], "\n\n")
+    print(plots[[i]])
+    cat("\n\n")
+  }
+}
+
+cat(":::\n\n")
+```
+
+Horizontal bar charts showing the percentage of respondents who indicated that a given option would facilitate adopting more open research practices, in a separate chart for each discipline. Percentages are superimposed on each bar. The number of total respondents in the discipline is indicated on the panel headings. Note that respondents were limited to ticking maximum 5 options. See the beginning of this section for the full text of response options. Click on the tabs below to view the chart for a given discipline.
+
+:::
+
+#### Facilitators by Career Level
+
+See @tbl-facilitators-career for a tabular representation.
+
+```{r}
+#| label: fig-facilitators-career
+#| fig-cap: "Panelled horizontal bar chart showing the percentage of respondents who  indicated that a given option would facilitate adopting more open research practices, on a separate panel for each career level (Junior, Mid, Senior). Percentages are superimposed on each bar. The number of total respondents in each career level is indicated on the panel headings. Note that respondents were limited to ticking maximum 5 options. See the beginning of this section for the full text of response options."
+
+
+facilitators_career <- facilitators_data |>
+  filter(Career_level != na_text) |>
+  count(name, value, Career_level) |>
+  mutate(total = sum(n), .by = c(name, Career_level)) |>
+  mutate(pcnt = n/total, 
+         label = round(pcnt*100) |> paste0("%")) |>
+  filter(value)
+
+title <- facilitators_career |>
+  mutate(title = paste0(Career_level, " (n=", max(total), ")"), 
+         .by = Career_level) |>
+  select(Career_level, title) |>
+  unique() 
+
+career_title <- setNames(title$title, title$Career_level)
+
+table_panel(facilitators_career, 
+            x = "name", 
+            title = "Facilitators by Career Level", "Career_level", 
+            ncol = 3, c(0,1), career_title)
+```
+
+{{< pagebreak >}}
+
+## Supplemental Tables
+
+### Use 
+
+#### Use Overall
+
+```{r}
+#| label: tbl-use
+#| tbl-cap: "See @fig-use for a graphic representation."
+
+use_all |>
+  select(-n) |>
+  pivot_wider(names_from = value, values_from = pcnt) |>
+  rename(Practice = name) |>
+  datatable(rownames = FALSE, options = list(dom = 't', paging = F)) |>
+  formatPercentage(columns = 3:6, digits = 0)
+```
+
+#### Use by Research Approach
+
+```{r}
+#| label: tbl-use-qq
+#| tbl-cap: "See @fig-use-qq for a graphic representation."
+
+tbl_opts <- list(
+    dom = 'lfrtip',
+    lengthMenu = list(c(8, 16, -1), 
+                      c('8', '16', 'All')),
+    paging = T)
+
+use_qq |>
+  select(-n) |>
+  pivot_wider(names_from = value, values_from = pcnt) |>
+  rename(`Research Approach` = Research_approach, Practice = name) |>
+  datatable(rownames = FALSE, filter = "top", options = tbl_opts) |>
+  formatPercentage(columns = 4:7, digits = 0)
+```
+
+
+#### Use by Detailed Research Method 
+
+```{r}
+#| label: tbl-use-meth
+#| tbl-cap: "See @fig-use-meth for a graphic representation."
+
+tbl_opts <- list(
+    dom = 'lfrtip',
+    lengthMenu = list(c(7, 14, -1), 
+                      c('7', '14', 'All')),
+    paging = T)
+
+use_meth |>
+  select(-n) |>
+  pivot_wider(names_from = value, values_from = pcnt) |>
+  rename(`Research Method` = method, Practice = name) |>
+  datatable(rownames = FALSE, filter = "top", options = tbl_opts) |>
+  formatPercentage(columns = 4:7, digits = 0)
+```
+
+
+#### Use by Discipline
+
+```{r}
+#| label: tbl-use-disc
+#| tbl-cap: "See @fig-use-disc and @fig-use-disc-pract for graphic representations."
+
+tbl_opts <- list(
+    dom = 'lfrtip',
+    lengthMenu = list(c(10, 23, -1), 
+                      c('10', '23', 'All')),
+    paging = T)
+
+use_discipline |>
+  select(-n) |>
+  pivot_wider(names_from = value, values_from = pcnt) |>
+  rename(Practice = name, Discipline = Discipline) |>
+  datatable(rownames = FALSE, filter = "top", options = tbl_opts) |>
+  formatPercentage(columns = 4:7, digits = 0)
+```
+
+
+
+#### Use by Career Level
+
+```{r}
+#| label: tbl-use-career
+#| tbl-cap: "See @fig-use-career for a graphic representation."
+
+tbl_opts <- list(
+    dom = 'lfrtip',
+    lengthMenu = list(c(9, 18, -1), 
+                      c('9', '18', 'All')),
+    paging = T)
+
+use_career |>
+  select(-n) |>
+  pivot_wider(names_from = value, values_from = pcnt) |>
+  rename(Practice = name, `Career Level` = Career_level) |>
+  datatable(rownames = FALSE, filter = "top", options = tbl_opts) |>
+  formatPercentage(columns = 4:7, digits = 0)
+```
+
+
+### Attitudes
+
+#### Attitudes Overall
+
+```{r}
+#| label: tbl-attitudes
+#| tbl-cap: "See @fig-attitudes for a graphic representation."
+
+attitudes_all |>
+  select(-n) |>
+  pivot_wider(names_from = value, values_from = pcnt) |>
+  rename(Attitude = name) |>
+  datatable(rownames = FALSE, options = list(dom = 't', paging = F)) |>
+  formatPercentage(columns = 2:6, digits = 0)
+```
+
+#### Attitudes by Research Approach
+
+```{r}
+#| label: tbl-attitudes-qq
+#| tbl-cap: "See @fig-attitudes-qq for a graphic representation."
+
+tbl_opts <- list(
+    dom = 'lfrtip',
+    lengthMenu = list(c(8, 16, -1), 
+                      c('8', '16', 'All')),
+    paging = T)
+
+attitudes_qq |>
+  select(-n) |>
+  pivot_wider(names_from = value, values_from = pcnt) |>
+  rename(`Research Approach` = Research_approach, Attitude = name) |>
+  datatable(rownames = FALSE, filter = "top", options = tbl_opts) |>
+  formatPercentage(columns = 4:8, digits = 0)
+```
+
+#### Attitudes by Discipline
+
+```{r}
+#| label: tbl-attitudes-disc
+#| tbl-cap: "See @fig-attitudes-disc for a graphic representation."
+
+tbl_opts <- list(
+    dom = 'lfrtip',
+    lengthMenu = list(c(10, 23, -1), 
+                      c('10', '23', 'All')),
+    paging = T)
+
+attitudes_disc |>
+  select(-n) |>
+  pivot_wider(names_from = value, values_from = pcnt) |>
+  rename(Attitude = name, Discipline = Discipline) |>
+  datatable(rownames = FALSE, filter = "top", options = tbl_opts) |>
+  formatPercentage(columns = 4:8, digits = 0)
+```
+
+#### Attitudes by Career Level
+
+```{r}
+#| label: tbl-attitudes-career
+#| tbl-cap: "See @fig-attitudes-career for a graphic representation."
+
+tbl_opts <- list(
+    dom = 'lfrtip',
+    lengthMenu = list(c(9, 18, -1), 
+                      c('9', '18', 'All')),
+    paging = T)
+
+attitudes_career |>
+  select(-n) |>
+  pivot_wider(names_from = value, values_from = pcnt) |>
+  rename(Attitude = name, `Career Level` = Career_level) |>
+  datatable(rownames = FALSE, filter = "top", options = tbl_opts) |>
+  formatPercentage(columns = 4:8, digits = 0)
+```
+
+
+### Facilitators
+
+#### Facilitators Overall
+
+```{r}
+#| label: tbl-facilitators
+#| tbl-cap: "See @fig-facilitators for a graphic representation."
+
+facilitators_all |>
+  select(Facilitators = name, Percent = pcnt) |>
+  datatable(rownames = FALSE, options = list(dom = 't', paging = F)) |>
+  formatPercentage(columns = 2, digits = 0)
+```
+
+#### Facilitators by Research Approach
+
+```{r}
+#| label: tbl-facilitators-qq
+#| tbl-cap: "See @fig-facilitators-qq for a graphic representation."
+
+tbl_opts <- list(
+    dom = 'lfrtip',
+    lengthMenu = list(c(10, 20, -1), 
+                      c('10', '20', 'All')),
+    paging = T)
+
+facilitators_qq |>
+  select(Facilitators = name, 
+         `Research Approach` = Research_approach, 
+         total, 
+         Percent = pcnt) |>
+  datatable(rownames = FALSE, filter = "top", options = tbl_opts) |>
+  formatPercentage(columns = 4, digits = 0)
+```
+
+#### Facilitators by Discipline
+
+```{r}
+#| label: tbl-facilitators-disc
+#| tbl-cap: "See @fig-facilitators-disc for a graphic representation."
+
+tbl_opts <- list(
+    dom = 'lfrtip',
+    lengthMenu = list(c(10, 23, -1), 
+                      c('10', '23', 'All')),
+    paging = T)
+
+facilitators_data |>
+    count(name, value, Discipline) |>
+    mutate(total = sum(n), 
+           pcnt = n/sum(n), 
+           label = round(pcnt*100) |> paste0("%"),
+           .by = c(name, Discipline)) |>
+  select(Facilitators = name, 
+         Discipline = Discipline,
+         total, 
+         Percent = pcnt) |>
+  datatable(rownames = FALSE, filter = "top", options = tbl_opts) |>
+  formatPercentage(columns = 4, digits = 0)
+```
+
+#### Facilitators by Career Level
+
+```{r}
+#| label: tbl-facilitators-career
+#| tbl-cap: "See @fig-facilitators-career for a graphic representation."
+
+tbl_opts <- list(
+    dom = 'lfrtip',
+    lengthMenu = list(c(9, 18, -1), 
+                      c('9', '18', 'All')),
+    paging = T)
+
+facilitators_career |>
+  select(Facilitators = name, `Career Level` = Career_level, total,Percent = pcnt) |>
+  datatable(rownames = FALSE, filter = "top", options = tbl_opts) |>
+  formatPercentage(columns = 4, digits = 0)
+```
+

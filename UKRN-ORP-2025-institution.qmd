@@ -1,0 +1,1075 @@
+---
+title: "ORP Survey Institutional Report"
+subtitle: "`r params$inst`"
+format: 
+  html:
+    embed-resources: true
+    link-external-newwindow: true
+    toc: true
+    toc-depth: 5
+    toc-expand: 2
+    toc-location: left
+    number-sections: true
+    number-depth: 5
+    df-print: paged
+    theme: 
+      - simplex
+      - custom.scss
+    mainfont: Roboto
+execute: 
+  echo: false
+  message: false
+  warning: false
+fig-width: 8
+fig-height: 6
+fig-format: png
+fig-dpi: 300
+fig-cap-location: top
+params:
+  inst: "University of Glasgow"
+  filename: "Glasgow"
+---
+
+<footer>UKRN Institutional Report: `r params$inst`</footer>
+
+![](logo.png){style="float:right; width: 25%"}
+
+```{r, setup}
+#| include: false
+library(tidyverse) # data processing and visualisation
+library(DT) # for interactive tables
+library(ggraph) # for network plots
+library(igraph) # for network plots
+
+source("scripts/plot-funcs.R")
+source("scripts/levels.R")
+
+ukrn <- list(
+  purple = "#4E4F86", 
+  green = "#13A89E", 
+  pink = "#F2008C", 
+  dark = "#28295B"
+)
+yes <- ukrn$purple
+no <- ukrn$green
+
+theme_set(theme_light(12))
+theme_replace(title = element_text(colour = ukrn$dark),
+              strip.background = element_rect(fill = ukrn$dark),
+              plot.margin = unit(c(0.2, 0.5, 0.1, 0.2), "cm"),
+              panel.grid.major.y = element_blank(),
+              legend.position = "bottom",
+              panel.spacing.x = unit(0.8, "cm"))
+
+inst_cols <- cols(
+  Institution = col_factor(institutions)
+)
+inst_data <- read_csv("data/_inst_data.csv", col_types = inst_cols)|>
+  filter(Institution == params$inst)
+
+data_cols <- cols(
+  Career_level = col_factor(names(career_levels)),
+  Research_approach = col_factor(names(qq)),
+  Discipline = col_factor(names(disciplines)),
+  Discipline_category = col_factor(c(
+    "Arts and Humanities",
+    "Social Sciences",
+    "Health & Biological Sciences",
+    "Physical Sciences"))
+)
+data <- paste0("data/ukrn_survey_2025_", params$filename, ".csv") |>
+  read_csv(col_types = data_cols)
+```
+
+
+## Report
+
+### Background and rationale
+
+Open research (OR) encompasses the practices that make the research process more transparent, robust, reproducible, and inclusive.
+
+The [UK Reproducibility Network](https://www.ukrn.org/) (UKRN) is a peer-led consortium that promotes OR practices to ensure the highest standards of research. To achieve this, UKRN has launched a five-year [Open Research Programme](https://www.ukrn.org/open-research-programme/) (ORP) running from 2021 to 2027 across its member institutions, with the aim of accelerating the uptake of high-quality OR practices. 
+
+One of the aims of the UKRN's ORP is to measure the prevalence of OR practices nationally. Its evaluation, therefore, needs to demonstrate the extent to which it has achieved this aim. Part of the evidence to support this is through surveys carried out in 2022-2023, 2025 and 2027. The ORP's first survey, titled the Open and Transparent Research Practices (OTRP) survey, was conducted by 15 partners in 2022-2023, and provided important insight for planning the ORP intervention projects. The 2025 and 2027 surveys aim to provide evidence of the changes in the prevalence of OR practices. To fulfill this aim, 19 member institutions of the UKRN ORP across the UK distributed the 2025 Open Research Programme (ORP) survey  to their researchers. The aggregated data from all institutions are shared elsewhere A copy of the aggregate report was shared with you by email. Both the aggregate report and the underpinning data will be available on the [UKRN Sharing Platform](https://oercommons.org/groups/evaluation-design/15346/24199/7499/?&__hub_id=179). This report presents the findings from your institution.
+
+The survey contains questions about researchers' awareness and use of OR practices, as well as attitudes about, and factors facilitating, OR. We also collected information about the respondents' career stage, research field, and research methods, to contextualise the main findings. 
+
+The survey received ethics approval by the University of Bristol (Ref: 23351).
+
+### Methods: How the survey was run
+
+This survey was designed to elicit responses from a more representative sample of researchers than surveys such as the 2022-2023 OTRP that use an open sampling approach – a key advantage that should make the findings stronger. The outcomes of using this approach are presented in the 2025 ORP aggregate survey report.
+
+The survey was administered between February and July 2025, by sending it directly to a random sample of 10% of researchers (both staff and postgraduate research students) at the institution, stratified to ensure representation across disciplines and career levels. 
+
+```{r}
+n_surveyed <- inst_data$n_surveyed |> as.numeric()
+n_responded <- nrow(data)
+pcnt_response <- round(100*n_responded/n_surveyed) |>
+  paste0("%")
+
+if (is.na(n_surveyed)) {
+  n_surveyed <- "unknown"
+  pcnt_response <- "unknown"
+}
+```
+
+
+At your institution the survey was sent to `r n_surveyed` researchers and postgraduate students, and responses were received from `r n_responded` of them, a `r pcnt_response` response rate.
+
+The data was analysed by the ORP [Evaluation Design team](https://oercommons.org/groups/evaluation-design/15346/?__hub_id=179), who collated both the aggregate report and the institutional reports. The ORP Evaluation Design team does not have access to the personal information of the participants. Responses to the survey are anonymous, apart from identifying which responses relate to your institution.
+
+Some institutions had a limited number of responses to the survey. In such cases, we encourage caution when interpreting the data presented in the graphs, as results based on a small sample may not fully represent the views of the wider community.
+
+### Wider context: How this report fits in the 2025 ORP survey
+
+This institutional report includes the survey results of your institution. `r if (params$inst != "University of East Anglia") { "These results were also used to collate an aggregate report, which includes the data from all 19 participating institutions."} ` The data underpinning this institutional report, shared with you as a csv file, should not be shared beyond your institution as to protect anonymity, however aggregated data will be available on the UKRN Sharing Platform.
+
+The ORP plans to run another iteration of this survey in 2027. Should your institution choose to participate, it will provide a valuable opportunity to compare results, and evaluate change over time.
+
+### How institutions may use survey results
+
+Here are few examples of how your institution can use this survey results:
+
+* Estimate awareness/use of OR practices across disciplines and career levels
+* Establish a baseline (or part of evidence base) for measuring changes in OR practices ahead of the Research Excellence Framework (REF) 2029
+* Evaluate where it may be useful to add more training or support for various practices
+* Identify opportunities to strengthen institutional support for OR practices
+* Benchmark your institution against a national sample
+
+### Links
+
+All survey materials can be found on the [UKRN Sharing Platform](https://oercommons.org/groups/evaluation/15346/24199/7499/?&__hub_id=179).
+
+### Contacts
+Questions should be addressed in the first instance to your UKRN [Institutional Lead](https://www.ukrn.org/institutional-leads/) and [Open Research Coordinator and Administrator](https://www.ukrn.org/orp-orcas/), who coordinated the survey distribution at your institution.
+
+## Data Visualisation
+
+### Information about Respondents
+
+```{r}
+number_of_disciplines <- unique(data$Discipline) |> 
+  setdiff(na_text) |> # exclude missing
+  length()
+```
+
+Our `r nrow(data)` respondents come from `r number_of_disciplines` disciplines.
+
+
+#### Research Approach
+
+```{r}
+#| label: data-qq
+qq_data <- count(data, Research_approach, .drop = FALSE)
+```
+
+
+```{r}
+#| label: fig-qq
+#| fig-cap: !expr paste0("Horizontal bar chart showing the number of respondents by research approach (qualitative, quantitative, both, or neither/unsure), and the percentage of total survey responses each approach represents (percentages superimposed on each bar, total n=", sum(qq_data$n), "). Each respondent selected one option. Respondents who did not select any answer are represented in the ‘(Missing)’ bar.")
+#| fig-width: 8
+#| fig-height: 3
+
+title <- paste0("Research Approach (n=", sum(qq_data$n), ")")
+
+y <- ceiling((max(qq_data$n) + 1)/5) * 5
+n_plot(qq_data, "Research_approach", title,
+            ylim = c(0, y))
+```
+
+
+
+#### Detailed Research Method
+
+```{r}
+#| label: data-meth
+meth_data <- data |>
+  select(ResponseId, starts_with("Methods_")) |>
+  pivot_longer(cols = starts_with("Methods_"), 
+               names_prefix = "Methods_") |>
+  mutate(name = gsub("_", " ", x = name),
+         name = factor(name, meth_levels))
+```
+
+
+```{r}
+#| label: fig-meth
+#| fig-cap: !expr paste0("Horizontal bar chart showing the number and percentage of respondents who identified as using each research method. Respondents could select multiple methods from a list including all those listed on the Y-axis of this figure. Percentages are calculated based on the number of respondents who answered this question, n=", nrow(data), " (not the total number of selections, n=", nrow(meth_data), ").")
+
+meth_summary <- meth_data |>
+  summarise(n = sum(value), .by = name)
+
+title <- paste0("Methods (n=", nrow(data), ")")
+
+y <- ceiling((max(meth_summary$n) + 1)/5) * 5
+n_plot(meth_summary, "name", title, total = nrow(data),
+            ylim = c(0, y))
+```
+
+
+
+```{r}
+#| label: fig-meth-connect
+#| fig-cap: "Network diagram showing the weight of connections between the response options for different research methods. Each coloured line connecting two research methods represents the number of respondents who reported they used both of those methods. Note this is raw numbers, rather than percentages. Yellow (lighter) lines represent larger numbers, and purple (darker) lines represent smaller numbers."
+#| fig-width: 8
+#| fig-height: 4
+
+# process methods for network plot
+meth_connect <- meth_data |>
+  filter(value) |>
+  filter(name != "Other") |>
+  mutate(name = factor(name, levels(name), 
+                         levels(name) |> 
+                          gsub(" / ", " /  \n  ", x = _) |>
+                          gsub("Observational methods", 
+                               "Observational  \n  methods", x = _) |>
+                          gsub("Practise-based research", 
+                               "Practise-based  \n  research", x = _) |>
+                          paste0("  ", x = _, "  ")))
+
+edges <- meth_connect |>
+  inner_join(meth_connect, by = "ResponseId", 
+             relationship = "many-to-many") |>
+  filter(as.integer(name.x) < as.integer(name.y)) |> 
+  count(name.x, name.y, name = "weight")
+
+g <- igraph::graph_from_data_frame(edges, directed = FALSE)
+
+breaks_by <- case_when(
+  max(edges$weight) < 15 ~ 2,
+  max(edges$weight) < 30 ~ 5,
+  .default = 10
+)
+
+ggraph(g, layout = "circle") +
+  geom_edge_link(aes(color = weight), width = 2, alpha = 0.5) +
+  geom_node_point(size = 5, color = ukrn$pink) +
+  geom_node_text(aes(label = name, 
+                    # angle = -((-node_angle(x, y) + 90) %% 180) + 90, 
+                     hjust = case_when(
+                       name == "Other" ~ 0,
+                       name == "  Theoretical research  " ~ 0,
+                       name == "  Survey based methods  " ~ 0,
+                       node_angle(x, y) > 180 ~ 1, 
+                       .default = 0
+                     )), 
+                 nudge_y = 0,
+                 vjust = 0.5, size = 4) +
+  scale_edge_colour_viridis("Number of\nresponses",
+                            guide = guide_legend(direction = "vertical"), 
+                            option = "D", breaks = seq(0, 400, breaks_by)) +
+  theme_void() +
+  theme(plot.margin = margin(0, 50, 0, 100),
+        legend.margin = margin(0, 0, 0, 75)) +
+  coord_cartesian(clip = "off")
+```
+
+
+```{r}
+#| label: fig-meth-total
+#| fig-cap: "Histogram showing the number of detailed research methods that various participants reported they used (participants could choose multiple). Note that most participants chose more than one detailed research method, meaning that any other findings in this report that represent individual detailed research methods will include a large number of respondents who use multiple methods."
+
+meth_data |>
+  filter(value) |>
+  count(ResponseId) |>
+  ggplot(aes(x = n)) +
+  geom_histogram(binwidth = 1, color = "black", fill = ukrn$purple) +
+  scale_x_continuous("Number of detailed research methods chosen", breaks = 0:20) +
+  labs(y = "Number of participants")
+```
+
+
+#### Disciplines 
+
+```{r}
+#| label: data-disc
+disc_data <- count(data, Discipline, .drop = FALSE)
+```
+
+
+```{r}
+#| label: fig-disc
+#| fig-cap: !expr paste0("Horizontal bar chart showing the number of survey respondents by research discipline (percentages superimposed on each bar, total n=", nrow(data), "), and the percentage of total survey responses each discipline represents. Respondents were instructed to select the discipline that best fit them, from a list adapted from the UK Higher Education Statistics Agency.")
+
+title <- paste0("Disciplines (n=", sum(disc_data$n), ")")
+
+y <- ceiling((max(disc_data$n) + 1)/5) * 5
+n_plot(disc_data, "Discipline", title, 
+            ylim = c(0, y))
+      
+```
+
+
+#### Career Level 
+
+```{r}
+#| label: data-career
+career_data <- count(data, Career_level, .drop = FALSE)
+```
+
+
+```{r}
+#| label: fig-career
+#| fig-cap: "Horizontal bar chart showing the number of respondents for each career level, and the percentage of total survey responses each career level represents. Categories include Junior (e.g., PhD students, early career postdocs), Mid (e.g., lecturers, lab managers), and Senior (e.g., professors, senior lecturers). Respondents who did not select any answer are represented in the ‘(Missing)’ bar."
+#| fig-width: 8
+#| fig-height: 2.5
+
+title <- paste0("Career Level (n=", sum(career_data$n), ")")
+
+y <- ceiling((max(career_data$n) + 1)/5) * 5
+n_plot(career_data, "Career_level", title, ylim = c(0, y))
+  
+```
+
+
+
+#### Career Level by Discipline
+
+
+```{r}
+#| label: fig-career-disc
+#| fig-cap: "Panelled horizontal bar charts showing the distribution of career levels (Junior, Mid, Senior) within each discipline (one discipline per panel). Bars, with superimposed percentages, indicate the proportion of respondents at each career stage within that discipline. Total number of respondents in each discipline is indicated in the title of each panel"
+#| fig-width: 8
+#| fig-height: 3
+
+career_disc <- data |>
+  count(Career_level, Discipline_category, .drop = FALSE) |>
+  mutate(pcnt = n/sum(n),
+         label = paste0(round(pcnt*100), "%"),
+         .by = Discipline_category) |>
+  filter(Discipline_category != na_text, 
+         Career_level != na_text) |>
+  mutate(Career_level = factor(Career_level)) |>
+  mutate(total = sum(n), .by = Discipline_category) |>
+  mutate(title = paste0(Discipline_category, " (n=", max(total), ")"), 
+         .by = Discipline_category) 
+
+title <- career_disc |>
+  select(Discipline_category, title) |>
+  unique() 
+title <- setNames(title$title, title$Discipline_category)
+
+career_disc |>
+  table_panel("Career_level", 
+               "Career Level by Discipline", 
+                   "Discipline_category", 2, ylim = c(0, 1), title)
+```
+
+
+### Awareness of Open Research Practices
+
+#### Awareness Overall 
+
+
+```{r}
+#| label: data-aware
+aware_data <- data |>
+  select(ResponseId:Discipline_category, 
+         starts_with("Awareness_"), 
+         starts_with("Methods_")) |>
+  pivot_longer(cols = starts_with("Awareness_"), 
+               names_prefix = "Awareness_") |>
+  filter(!is.na(value)) |>
+  mutate(value = recode(value, Yes = 1, No = 0),
+         name = gsub("_", " ", x = name),
+         name = factor(name, practices))
+
+aware_all <- aware_data |>
+  count(name, value) |>
+  mutate(total = sum(n), .by = name)
+```
+
+
+```{r}
+#| label: fig-aware
+#| fig-cap: !expr paste0("Horizontal stacked bar chart showing the percentages of respondents who were aware or unaware of each open research practice (percentage aware is superimposed on each purple bar). (Note that exact numbers of respondents varied for each research practice, from n=", min(aware_all$total), " to n=", max(aware_all$total), ".")
+
+title <- paste0("Awareness (n=", max(aware_all$total), ")")
+
+label_plot2(aware_all, "name", title, "label", 
+              fill_labels = c("Unaware", "Aware"))
+```
+
+#### Awareness by Research Approach
+
+```{r}
+#| label: fig-aware-qq
+#| fig-cap: "Panelled horizontal stacked bar chart showing the percentages of respondents who were aware or unaware of each open research practice, on a separate panel for each research approach (qualitative, quantitative, both, or neither/unsure). Percentage aware is superimposed on each purple bar. The number of total respondents in each research approach is indicated on the panel headings."
+#| fig-width: 8
+#| fig-height: 8
+
+table_panel2(aware_data, 
+             title = "Awareness by Research Approach", 
+             by = "Research_approach", 
+             ncol = 2, 
+             fill_labels = c("Unaware", "Aware"))
+```
+#### Awareness by Detailed Research Method 
+
+```{r}
+#| label: data-aware-meth
+
+aware_meth <- aware_data |>
+  pivot_longer(cols = starts_with("Methods_"), 
+               names_to = "method", 
+               names_prefix = "Methods_", 
+               values_to = "method_val") |>
+  select(method, method_val, name, value) |>
+  filter(method_val) |>
+  mutate(method = gsub("_", " ", method),
+         method = factor(method, meth_levels)) |>
+  count(name, method, value) |>
+  mutate(total = sum(n), .by = c(name, method)) |>
+  mutate(pcnt = n/total, 
+         label = round(pcnt*100) |> paste0("%"))
+```
+
+::: {#fig-aware-meth}
+
+```{r}
+#| label: ifig-aware-meth
+#| results: 'asis'
+
+# separate plots by method
+n_plot_tabs2(data = aware_meth,
+               x = "name", 
+               title = "Awareness by Method", 
+               by = "method", 
+               add_total = TRUE)
+```
+
+Horizontal stacked bar charts showing the percentages of respondents who were aware or unaware of each open research practice, in a separate chart for each detailed research method. Percentage aware is superimposed on each purple bar. The number of total respondents in each detailed research method is indicated in the chart headings. Click on the tabs below to view the chart for a given detailed research method.
+
+:::
+
+#### Awareness by Discipline 
+
+```{r}
+#| label: data-aware-disc
+aware_disc <- aware_data |>
+  filter(!is.na(Discipline_category)) |>
+  count(name, Discipline_category, value) |>
+  mutate(total = sum(n), 
+         .by = c(name, Discipline_category)) |>
+  mutate(pcnt = n/total, 
+         label = round(pcnt*100) |> paste0("%"),
+         value = ifelse(value, "Aware", "Unaware"))
+```
+
+```{r}
+#| label: fig-aware-disc
+#| fig-cap: "Horizontal stacked bar charts showing the percentages of respondents who were aware or unaware of each open research practice, in a separate chart for each discipline. The number of total respondents in each discipline is indicated in the chart headings."
+#| fig-width: 8
+#| fig-height: 8
+
+aware_disc |>
+  mutate(name = fct_rev(name)) |>
+  table_panel5("name", 
+                  "Awareness by Discipline",
+                  "Discipline_category", 2, c(no, yes)) +
+  geom_text(aes(label = ifelse(value == "Aware", n, "")),
+            color = "white",
+            y = .01,
+            hjust = 0)
+```
+
+
+#### Awareness by Career level 
+
+```{r}
+#| label: fig-aware-career
+#| fig-cap: "Panelled horizontal stacked bar chart showing the percentages of respondents who were aware or unaware of each open research practice, on a separate panel for each career level (Junior, Mid, Senior). Percentage aware is superimposed on each purple bar. The number of total respondents in each career level is indicated on the panel headings."
+
+table_panel2(data = aware_data, 
+             title = "Awareness by Career Level", 
+             by = "Career_level", 
+             ncol = 3)
+```
+
+
+### Use of Open Research Practices
+
+```{r}
+#| label: data-use
+use_cols <- c("grey", 
+              ukrn$green, 
+              ukrn$purple, 
+              ukrn$dark)
+  
+use_labels <- c("I use it often", 
+                "I have used it",
+                "I have NOT used it",
+                "Not applicable to my research")
+
+use_data <- data |>
+  select(ResponseId:Discipline_category, 
+         starts_with("Use_"), 
+         starts_with("Methods_")) |>
+  pivot_longer(cols = starts_with("Use_"), 
+               names_prefix = "Use_") |>
+  filter(!is.na(value)) |>
+  mutate(value = factor(value, use_labels, 
+                        gsub(" to my research", "", use_labels)),
+         name = gsub("_", " ", name) |> factor(practices))
+
+use_all <- use_data |>
+  count(name, value) |>
+  mutate(pcnt = n/sum(n), .by = name, name = fct_rev(name)) |>
+  mutate(total = sum(n), .by = name) 
+```
+
+
+#### Use Overall
+
+```{r}
+#| label: fig-use
+#| fig-cap: !expr 'paste0("Horizontal stacked bar chart showing whether, and how often, respondents have used each open research practice. Each bar is segmented by the percentages of respondents who answered each option: I use it often / I have used it / I have not used it / Not applicable to my research. (Note that exact numbers of respondents varied for each research practice, from n=", min(use_all$total), " to n=", max(use_all$total), ".)")'
+
+ggplot(use_all, aes(x = name, y = pcnt, fill = fct_rev(value))) +
+  geom_col() +
+  coord_flip(clip = 'off') +
+  scale_y_continuous(expand = expansion(c(0)),
+                     labels = scales::label_percent()) +
+  scale_fill_manual(values = use_cols,
+                    guide=guide_legend(reverse=T)) +
+  labs(x = NULL,
+       y = NULL,
+       fill = NULL,
+       title = paste0("Use (n=", max(use_all$total), ")")) +
+  theme(
+    plot.margin = unit(c(0.2, 0.5, 0.1, 0.2), "cm"),
+    panel.grid.major.y = element_blank(),
+    legend.position = "bottom",
+  )
+```
+#### Use by Research Approach
+
+
+```{r}
+#| label: fig-use-qq
+#| fig-cap: "Panelled horizontal stacked bar charts showing whether, and how often, respondents have used each open research practice, on a separate panel for each research approach (qualitative, quantitative, both, or neither/unsure - one answer selected per respondent). Each bar is segmented by the percentages of respondents who answered each option: I use it often / I have used it / I have not used it / Not applicable. The number of total respondents in each research approach is indicated on the panel headings."
+#| fig-height: 6
+#| fig-width: 8
+
+use_qq <- use_data |>
+  count(name, Research_approach, value, .drop = FALSE) |>
+  filter(Research_approach != na_text) |>
+  mutate(total = sum(n),
+         pcnt = n/sum(n), .by = c(name, Research_approach)) |>
+  mutate(name = fct_rev(name))
+
+table_panel5(use_qq, "name", 
+                  "Use by Research Approach",
+                  "Research_approach", 2, use_cols)
+```
+
+
+```{r}
+#| label: fig-use-practice-binary
+#| fig-cap: "Panelled horizontal stacked bar charts showing percentages of respondents from each research approach who have or have not used a given open research practice, on a separate panel for each open research practice. The purple bars combine responses of ‘I use it often’ and ‘I have used it’. Green bars represent responses of ‘I have not used it.’ Responses of ‘not applicable’ were excluded from this chart."
+
+use_practice_bin <- use_data |>
+  mutate(use = case_match(value,
+                          "I use it often" ~ "Used", 
+                          "I have used it" ~ "Used",
+                          "I have NOT used it" ~ "Not Used",
+                          # set to "Not Used" if you want to add in NA
+                          "Not applicable" ~ NA)) |>
+  filter(Research_approach != na_text, !is.na(use)) |>
+  count(name, Research_approach, use) |>
+  mutate(pcnt = n/sum(n), .by = c(name, Research_approach)) 
+
+use_practice_bin |>
+  ggplot(aes(x = fct_rev(Research_approach), y = pcnt, fill = use)) +
+  geom_col() +
+  facet_wrap(~name, ncol = 3) +
+  coord_flip(clip = 'off') +
+  scale_y_continuous(expand = expansion(c(0)),
+                     labels = scales::label_percent()) +
+  scale_fill_manual(values = c(no, yes),
+                    guide=guide_legend(position = "inside", reverse=T)) +
+  labs(x = NULL,
+       y = NULL,
+       fill = NULL,
+       title = "Use by Open Research Practice") +
+  theme(panel.spacing.y = unit(0.5, "cm"), 
+    plot.margin = unit(c(0.2, 0.5, 0.1, 0.2), "cm"),
+    panel.grid.major.y = element_blank(),
+    legend.text = element_text(size = 14),
+    legend.position.inside = c(.85, .08)
+  )
+```
+
+#### Use by Detailed Research Method 
+
+```{r}
+#| label: data-use-meth
+use_meth <- use_data |>
+  pivot_longer(cols = starts_with("Methods_"), 
+               names_prefix = "Methods_", 
+               names_to = "method", 
+               values_to = "method_val") |>
+  filter(method_val) |>
+  select(method, name, value) |>
+  mutate(method = gsub("_", " ", method),
+         method = factor(method, meth_levels)) |>
+  mutate(total = n(), .by = c(method, name)) |>
+  count(method, name, value, total) |>
+  mutate(pcnt = n/total)
+```
+
+:::{#fig-use-meth}
+
+```{r}
+#| label: ifig-use-meth
+#| results: 'asis'
+
+n_plot_use_tabs3(
+  data = use_meth,
+  by = "method",
+  use_cols = use_cols
+)
+```
+
+Horizontal stacked bar charts showing whether, and how often, respondents have used each open research practice, in a separate chart for each detailed research method. Each bar is segmented by the percentages of respondents who answered each option: I use it often / I have used it / I have not used it / Not applicable. The number of total respondents in each detailed research method is indicated in the chart headings. Click on the tabs below to view the chart for a given detailed research method.
+
+:::
+
+
+#### Use by Discipline
+
+```{r}
+#| label: fig-use-disc
+#| fig-cap: "Horizontal stacked bar charts showing whether, and how often, respondents have used each open research practice, in a separate chart for each discipline. Each bar is segmented by the percentages of respondents who answered each option: I use it often / I have used it / I have not used it / Not applicable. The number of total respondents in each discipline is indicated  in the chart headings."
+#| fig-width: 8
+#| fig-height: 8
+
+use_discipline <- use_data |>
+  filter(Discipline_category != na_text) |>
+  count(name, Discipline_category, value) |>
+  mutate(total = sum(n),
+         pcnt = n/sum(n), .by = c(name, Discipline_category))  |>
+  mutate(name = fct_rev(name))
+
+table_panel5(use_discipline, "name", 
+                  "Use by Discipline",
+                  "Discipline_category", 2, use_cols)
+```
+
+
+#### Use by Career Level
+
+```{r}
+#| label: fig-use-career
+#| fig-cap: "Panelled horizontal stacked bar charts showing whether, and how often, respondents have used each open research practice, in a separate panel for each career level (Junior, Mid, Senior). Each bar is segmented by the percentages of respondents who answered each option: I use it often / I have used it / I have not used it / Not applicable. The number of total respondents in each career level is indicated on the panel headings."
+#| fig-alt: ""
+
+use_career <- use_data |>
+  filter(Career_level != na_text) |>
+  count(name, Career_level, value) |>
+  mutate(total = sum(n), 
+         pcnt = n/sum(n), 
+         .by = c(name, Career_level))
+
+title <- use_career |>
+  mutate(title = paste0(Career_level, " (n=", max(total), ")"), 
+         .by = Career_level) |>
+  select(Career_level, title) |>
+  unique() 
+career_title <- setNames(title$title, title$Career_level)
+
+use_career |>
+  ggplot(aes(x = fct_rev(name), y = pcnt, fill = fct_rev(value))) +
+  geom_col() +
+  facet_wrap(~Career_level, labeller = as_labeller(career_title)) +
+  coord_flip(clip = 'off') +
+  scale_y_continuous(expand = expansion(c(0)),
+                     labels = scales::label_percent()) +
+  scale_fill_manual(values = use_cols,
+                    guide=guide_legend(reverse=T)) +
+  labs(x = NULL,
+       y = NULL,
+       fill = NULL,
+        title = "Use by Career Level")
+```
+
+
+
+### Attitudes
+
+```{r}
+#| label: data-attitudes
+attitude_cols <- c("#336b67", 
+                   ukrn$green, 
+                   "grey", 
+                   ukrn$purple, 
+                   ukrn$dark)
+
+attitude_labels <- c("Strongly agree", 
+                     "Somewhat agree", 
+                     "Neutral", 
+                     "Somewhat disagree", 
+                     "Strongly disagree")
+
+attitudes_data <- data |>
+  select(ResponseId:Discipline_category, 
+         starts_with("Attitudes_"), 
+         starts_with("Methods_")) |>
+  pivot_longer(cols = starts_with("Attitudes_"), 
+               names_prefix = "Attitudes_") |>
+  mutate(name = gsub("_", " ", name),
+         name = factor(name, attitude_levels)) |>
+  filter(!is.na(value), value != "Not applicable") |>
+  mutate(value = factor(value, attitude_labels))
+```
+
+```{r}
+# counts
+
+n_attitudes <- unique(attitudes_data$ResponseId) |> length()
+
+# responses to Assessment that are "Not applicable" (not NA)
+n_assessment_na <- data |>
+  filter(Attitudes_Assessment == "Not applicable") |>
+  nrow()
+
+# valid responses to Assessment
+n_assessment <- data |>
+  filter(!is.na(Attitudes_Assessment),
+         Attitudes_Assessment != "Not applicable") |>
+  nrow()
+```
+
+
+
+Respondents were asked to rate their agreement (Strongly agree / Somewhat agree / Neutral / Somewhat disagree / Strongly disagree) with nine statements representing various attitudes about open research practices. The statements are listed below; a one-word label has been added at the beginning of each, to use on the Y-axes of the figures in this section. 
+
+* Note that for the question on Assessment, respondents were given a ‘not applicable' choice as well. These responses (n= `r n_assessment_na`) were excluded from the figures below.
+
+1. Usefulness: I think Open Research is useful for researchers like me 
+2. Participation: I would like to participate in Open Research practices more than I already do 
+3. Confidence: I am confident I know how to use Open Research practices in my research 
+4. Comprehension: I understand which Open Research practices would be relevant to use in my research 
+5. Support: I have support from my line manager/supervisor to use Open Research practices in my research 
+6. Training: My institution provides the training I need for best practice in Open Research 
+7. Norms: Open Research practices are expected in my research community (e.g., among my research group, department, or peers) 
+8. Resources: I know where to go to learn more about Open Research practices 
+9. Assessment: I have used engagement with Open Research as a criterion when assessing someone else for hiring or promotion, or had engagement with Open Research used as a criterion in my own assessment at my institution 
+
+
+
+#### Attitudes Overall
+
+
+```{r}
+#| label: fig-attitudes
+#| fig-cap: "Horizontal stacked bar chart showing participants' levels of agreement with each of the nine attitude statements on open research practices. Each bar is segmented by the percentages of respondents who answered each option: Strongly agree / Somewhat agree / Neutral / Somewhat disagree / Strongly disagree. The number of total respondents is indicated in the chart heading. See the beginning of this section for the full statements."
+
+attitude_levels2 <- attitude_levels
+attitude_levels2[[9]] <- paste0("*", attitude_levels[[9]])
+
+attitudes_all <- attitudes_data |>
+  count(name, value) |>
+  mutate(pcnt = n/sum(n), 
+         .by = name) 
+
+title <- paste0("Attitudes (n=", n_attitudes, ", for Assessment n=", n_assessment, "*)")
+
+attitudes_all |>
+  mutate(name = factor(name, attitude_levels, attitude_levels2)) |>
+  ggplot(aes(x = fct_rev(name), y = pcnt, fill = fct_rev(value))) +
+  geom_col() +
+  coord_flip(clip = 'off') +
+  scale_y_continuous(expand = expansion(c(0)),
+                     labels = scales::label_percent()) +
+  scale_fill_manual(values = attitude_cols,
+                    guide=guide_legend(reverse=T)) +
+  labs(x = NULL,
+       y = NULL,
+       fill = NULL,
+       title = title) +
+  theme(
+    legend.text = element_text(size = 9)
+  )
+```
+
+#### Attitudes by Research Approach
+
+```{r}
+#| label: fig-attitudes-qq
+#| fig-cap: "Panelled horizontal stacked bar chart showing participants' levels of agreement with each of the nine attitude statements on open research practices, in a separate chart for each research approach (qualitative, quantitative, both, or neither/unsure - one answer selected per respondent). Each bar is segmented by the percentages of respondents who answered each option: Strongly agree / Somewhat agree / Neutral / Somewhat disagree / Strongly disagree. The number of total respondents is indicated in each chart heading. See the beginning of this section for the full statements."
+
+attitudes_qq <- attitudes_data |>
+  filter(Research_approach != na_text) |>
+  count(name, value, Research_approach) |>
+  mutate(total = sum(n),
+         pcnt = n/sum(n), 
+         .by = c(name, Research_approach)) |>
+  mutate(name = fct_rev(name))
+
+table_panel5(attitudes_qq, "name", 
+                  "Attitudes by Research Approach",
+                  "Research_approach", 2, attitude_cols)
+```
+
+
+
+#### Attitudes by Discipline 
+
+```{r}
+#| label: fig-attitudes-disc
+#| fig-cap: "Horizontal stacked bar charts showing participants' levels of agreement with each of the nine attitude statements on open research practices, in a separate chart for each discipline. Each bar is segmented by the percentages of respondents who answered each option: Strongly agree / Somewhat agree / Neutral / Somewhat disagree / Strongly disagree - one answer selected per respondent. The number of total respondents in the discipline is indicated in each chart heading. See the beginning of this section for the full statements."
+
+attitudes_disc <- attitudes_data |>
+  filter(Discipline_category != na_text) |>
+  count(name, Discipline_category, value) |>
+  mutate(total = sum(n),
+         pcnt = n/sum(n), .by = c(name, Discipline_category)) |>
+    mutate(name = fct_rev(name))
+
+table_panel5(attitudes_disc, "name", 
+                  "Attitudes by Discipline",
+                  "Discipline_category", 2, attitude_cols) +
+    theme(panel.spacing.x = unit(0.8, "cm"))
+```
+
+#### Attitudes by Career Level 
+
+```{r}
+#| label: fig-attitudes-career
+#| fig-cap: "Panelled horizontal stacked bar chart showing participants' levels of agreement with each of the nine attitude statements on open research practices, in a separate chart for each career level (Junior, Mid, Senior). Each bar is segmented by the percentages of respondents who answered each option: Strongly agree / Somewhat agree / Neutral / Somewhat disagree / Strongly disagree. The number of total respondents is indicated in each chart heading. See the beginning of this section for the full statements."
+#| fig-height: 5
+#| fig-width: 8
+
+attitudes_career <- attitudes_data |>
+  filter(Career_level != na_text) |>
+  count(name, Career_level, value) |>
+  mutate(total = sum(n),
+         pcnt = n/sum(n), 
+         .by = c(name, Career_level)) 
+
+title <- attitudes_career |>
+  mutate(title = paste0(Career_level, " (n=", max(total), ")"), 
+         .by = Career_level) |>
+  select(Career_level, title) |>
+  unique() 
+career_title <- setNames(title$title, title$Career_level)
+
+attitudes_career |>
+  ggplot(aes(x = fct_rev(name), y = pcnt, fill = fct_rev(value))) +
+  geom_col() +
+  facet_wrap(~Career_level, labeller = as_labeller(career_title)) +
+  coord_flip(clip = 'off') +
+  scale_y_continuous(expand = expansion(c(0)),
+                     labels = scales::label_percent()) +
+  scale_fill_manual(values = attitude_cols,
+                    guide=guide_legend(reverse=T)) +
+  labs(x = NULL,
+       y = NULL,
+       fill = NULL,
+       title = "Attitudes by Career Level")
+```
+
+### Facilitators
+
+Respondents were asked ‘What would facilitators you adopt more open research practices?' and could select up to 5 of the response options. The 12 response options are listed below; a one-word label has been added at the beginning of each, to use on the Y-axes of the figures in this section.
+
+1. Guidance: More, or better organised, information and guidance
+2. Training: More training or mentorship
+3. Ethical clarity: Understanding ethical and legal issues (e.g. issues around data sharing)
+4. Prioritisation: Knowing what practices to prioritise / what really matters in my field
+5. Infrastructure: Tools and infrastructure (e.g. sufficient storage for open data)
+6. Time allocation: More time / workload dedicated to open research
+7. Incentives: Incentives (e.g., awards / funding) from my funder or institution
+8. Recognition: Recognition of Open Research in promotion and recruitment criteria
+9. Peer support: Support from colleagues (e.g., supervisors, students, technicians, administrators, librarians)
+10. Disciplinary norms: More norms and positive beliefs in my discipline encouraging open research
+11. No intention: Nothing, I do not plan to take up open research practices
+12. Already engaged: Nothing, I am already doing everything I think is applicable
+
+```{r}
+#| label: data-facilitators
+
+facilitators_data <- data |>
+  select(ResponseId:Discipline_category, 
+         starts_with("Facilitators_"), 
+         starts_with("Methods_")) |>
+  pivot_longer(cols = starts_with("Facilitators_"), 
+               names_prefix = "Facilitators_") |>
+  mutate(name = gsub("_", " ", name),
+         name = factor(name, facilitators_levels))
+
+fill_labels <- c("Unselected", "Selected")
+```
+
+
+#### Facilitators Overall
+
+```{r}
+#| label: fig-facilitators
+#| fig-cap: "Horizontal bar chart showing the percentage of respondents who indicated a given option would facilitate adopting more open research practices. Percentages are superimposed on each bar. Note that respondents were limited to ticking maximum 5 options. See the beginning of this section for the full text of response options."
+
+
+facilitators_all <- facilitators_data |>
+  count(name, value, .drop = FALSE) |>
+  mutate(total = sum(n), pcnt = n/sum(n), 
+         label = round(pcnt*100) |> paste0("%"),
+         .by = name) |>
+  filter(value)
+
+title <- paste0("Facilitators (n=", max(facilitators_all$total), ")")
+label_plot(facilitators_all, "name", title, "label")
+```
+
+```{r}
+#| label: fig-facilitators-connect
+#| fig-cap: "Network diagram showing the weight of connections between the response options for different facilitators. Each coloured line connecting two facilitators represents the number of respondents who selected both facilitators. Note this is raw numbers, rather than percentages. Yellow (lighter) lines represent larger numbers, and purple (darker) lines represent smaller numbers."
+#| fig-width: 8
+#| fig-height: 4
+
+facilitators_connect <- facilitators_data |>
+  filter(value) |>
+  select(ResponseId, value = name) |>
+  mutate(value = factor(value, levels(value), 
+                        paste0("  ", levels(value), "  ")))
+
+edges <- facilitators_connect |>
+  inner_join(facilitators_connect, by = "ResponseId", 
+             relationship = "many-to-many") |>
+  filter(as.integer(value.x) < as.integer(value.y)) |> 
+  count(value.x, value.y, name = "weight")
+
+breaks_by <- case_when(
+  max(edges$weight) < 15~ 2,
+  max(edges$weight) < 30 ~ 5,
+  .default = 10
+)
+
+g <- igraph::graph_from_data_frame(edges, directed = FALSE)
+
+ggraph(g, layout = "circle") +
+  geom_edge_link(aes(color = weight), width = 2, alpha = 0.5) +
+  geom_node_point(size = 5, color = ukrn$pink) +
+  geom_node_text(aes(label = name, 
+                    # angle = -((-node_angle(x, y) + 90) %% 180) + 90, 
+                     hjust = case_when(
+                       name == "  No intention  " ~ 0,
+                       name == "  Already engaged  " ~ 0,
+                       name == "  Survey based methods  " ~ 0,
+                       node_angle(x, y) > 180 ~ 1, 
+                       .default = 0
+                     )), 
+                 nudge_y = 0,
+                 vjust = 0.5, size = 4) +
+  scale_edge_colour_viridis("Number of\nresponses",
+                            guide = guide_legend(direction = "vertical"), 
+                            option = "D", breaks = seq(0, 400, breaks_by)) +
+  theme_void() +
+  theme(plot.margin = margin(0, 50, 0, 100),
+        legend.position. = "right",
+        legend.margin = margin(0, 0, 0, 75)) +
+  coord_cartesian(clip = "off")
+```
+
+#### Facilitators by Research Approach
+
+```{r}
+#| label: fig-facilitators-qq
+#| fig-cap: "Panelled horizontal stacked bar chart showing the percentage of respondents who  indicated that a given option would facilitate adopting more open research practices, on a separate panel for each research approach (qualitative, quantitative, both, or neither/unsure - one answer selected per respondent). Percentages are superimposed on each bar. The number of total respondents in each research approach is indicated on the panel headings. Note that respondents were limited to ticking maximum 5 options. See the beginning of this section for the full text of response options."
+#| fig-width: 8
+#| fig-height: 8
+
+facilitators_qq <- facilitators_data |>
+  count(name, Research_approach, value, .drop = FALSE) |>
+  filter(!is.na(Research_approach), Research_approach != na_text) |>
+  mutate(total = sum(n), .by = c(name, Research_approach)) |>
+  mutate(pcnt = n/total, 
+         label = round(pcnt*100) |> paste0("%")) |>
+  filter(value)
+
+title <- facilitators_qq |>
+  mutate(title = paste0(Research_approach, " (n=", max(total), ")"), 
+         .by = Research_approach) |>
+  select(Research_approach, title) |>
+  unique() 
+qq_title <- setNames(title$title, title$Research_approach)
+
+facilitators_qq  |>
+  table_panel("name", 
+              title = "Facilitators by Research Approach",
+              "Research_approach", 
+              2, c(0,1), qq_title)
+```
+
+
+
+
+
+#### Facilitators by Discipline
+
+```{r}
+#| label: fig-facilitators-disc
+#| fig-cap: "Horizontal bar charts showing the percentage of respondents who indicated that a given option would facilitate adopting more open research practices, in a separate chart for each discipline. Percentages are superimposed on each bar. The number of total respondents in the discipline is indicated on the panel headings. Note that respondents were limited to ticking maximum 5 options. See the beginning of this section for the full text of response options."
+#| fig-width: 8
+#| fig-height: 8
+
+facilitators_disc <- facilitators_data |>
+  filter(Discipline_category != na_text) |>
+  count(name, Discipline_category, value) |>
+  mutate(total = sum(n),
+         pcnt = n/sum(n), 
+         label = round(pcnt*100) |> paste0("%"),
+         .by = c(name, Discipline_category)) |>
+    filter(value | (!value & n == total)) |>
+    mutate(label = ifelse(value, label, "0%"),
+           n = ifelse(value, n, 0),
+           pcnt = ifelse(value, pcnt, 0),
+           Discipline_category = paste0(Discipline_category, " (n = ", total, ")"))
+
+facilitators_disc |>
+    mutate(x = fct_rev(name)) |>
+    ggplot(aes(x = x, y = pcnt)) +
+    geom_col(fill = yes, na.rm = TRUE) +
+    geom_text(aes(label = label, 
+                  y = ifelse(pcnt<.1, pcnt+.01, .01),
+                  color = I(ifelse(pcnt < .1, "black", "white"))),
+              hjust = 0) +
+    coord_flip(clip = 'off', ylim = c(0, 1)) +
+    facet_wrap(~Discipline_category) +
+    scale_x_discrete(drop = FALSE) +
+    scale_y_continuous(expand = expansion(0), 
+                       labels = scales::label_percent()) +
+    labs(x = NULL,
+         y = NULL,
+         alt = "", 
+         title = "Facilitators by Discipline")
+
+```
+
+#### Facilitators by Career Level
+
+```{r}
+#| label: fig-facilitators-career
+#| fig-cap: "Panelled horizontal bar chart showing the percentage of respondents who indicated that a given option would facilitate adopting more open research practices, on a separate panel for each career level (Junior, Mid, Senior). Percentages are superimposed on each bar. The number of total respondents in each career level is indicated on the panel headings. Note that respondents were limited to ticking maximum 5 options. See the beginning of this section for the full text of response options."
+#| fig-alt: ""
+
+facilitators_career <- facilitators_data |>
+  count(name, value, Career_level, .drop = FALSE) |>
+  filter(Career_level != na_text) |>
+  mutate(total = sum(n), .by = c(name, Career_level)) |>
+  mutate(pcnt = n/total, 
+         label = round(pcnt*100) |> paste0("%")) |>
+  filter(value)
+
+title <- facilitators_career |>
+  mutate(title = paste0(Career_level, " (n=", max(total), ")"), 
+         .by = Career_level) |>
+  select(Career_level, title) |>
+  unique() 
+career_title <- setNames(title$title, title$Career_level)
+
+table_panel(facilitators_career, "name", "Facilitators by Career Level", "Career_level", 3, c(0,1), career_title)
+```
+
+
