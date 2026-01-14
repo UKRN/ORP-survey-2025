@@ -987,6 +987,8 @@ ggraph(g, layout = "circle") +
 
 facilitators_qq <- facilitators_data |>
   count(name, Research_approach, value, .drop = FALSE) |>
+  pivot_wider(names_from = value, values_from = n, values_fill = 0) |>
+  pivot_longer(c(`FALSE`, `TRUE`), names_to = "value", values_to = "n") |>
   filter(!is.na(Research_approach), Research_approach != na_text) |>
   mutate(total = sum(n), .by = c(name, Research_approach)) |>
   mutate(pcnt = n/total, 
