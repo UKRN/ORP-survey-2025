@@ -26,10 +26,10 @@ execute:
 fig-width: 8
 fig-height: 6
 fig-format: png
-fig-dpi: 100
+fig-dpi: 144
 ---
 
-<footer>UKRN Working Paper ######### 
+<footer>UKRN Working Paper ##NUMBER## 
   <span class="license">
     <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
     <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC">
