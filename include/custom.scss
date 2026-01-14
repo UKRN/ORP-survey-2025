@@ -48,6 +48,11 @@ h5 {
 .license {
   float: right;
 }
+.license img {
+  max-width: 1em;
+  max-height:1em;
+  margin-left: .2em;
+}
 .license a {
   color: white !important;
 }

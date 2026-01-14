@@ -18,6 +18,7 @@ format:
       - simplex
       - include/custom.scss
     mainfont: Roboto
+    page-layout: full
 execute: 
   echo: false
   message: false
@@ -28,9 +29,18 @@ fig-format: png
 fig-dpi: 100
 ---
 
-<footer>UKRN Working Paper ######### <span class="license"><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></span></footer>
+<footer>UKRN Working Paper ######### 
+  <span class="license">
+    <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC">
+    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY">
+  </span>
+</footer>
 
-<div style="float:right; width: 25%">
+<div style="float:right; 
+            width: 25%; 
+            text-align: center; 
+            margin-left: 1em;">
   <img src="include/logo.png" style="width: 100%;" />
   UKRN ROR ID: [049czkm07](https://ror.org/049czkm07)
 </div>
@@ -241,7 +251,7 @@ Open materials, open protocols and open code/software are all relatively well kn
 
 ##### Open peer review
 
-Open peer review was well known (82%) but used by fewer than half of respondents (42%) (@fig-aware and @fig-use). Awareness and use were slightly higher among quantitative and mixed-methods researchers (88% and 83%, respectively) than among qualitative researchers (71%) (fig. 10 and 17). Disciplinary patterns mirrored those seen elsewhere, with greater awareness in Health & Biosciences and lower in Arts & Humanities (@fig-aware-disc). Across career levels, awareness is reasonably high, but again use is appreciably lower, with only 52% of senior researchers having used open peer review (@fig-aware-career and @fig-use-career).
+Open peer review was well known (82%) but used by fewer than half of respondents (42%) (@fig-aware and @fig-use). Awareness and use were slightly higher among quantitative and mixed-methods researchers (88% and 83%, respectively) than among qualitative researchers (71%) (@fig-aware-qq and @fig-use-qq). Disciplinary patterns mirrored those seen elsewhere, with greater awareness in Health & Biosciences and lower in Arts & Humanities (@fig-aware-disc). Across career levels, awareness is reasonably high, but again use is appreciably lower, with only 52% of senior researchers having used open peer review (@fig-aware-career and @fig-use-career).
 
 ##### Preregistration and replication studies
 
@@ -250,7 +260,7 @@ Awareness and use of both practices did not differ notably by career level (@fig
 
 ##### Co-production and citizen science
 
-Co-production had relatively high awareness (80%) and moderate use (54%) (@fig-aware and @fig-use). Awareness was strongest among qualitative researchers (89%) and those in the Arts and Humanities, and Social Sciences (@fig-aware-qq and @fig-aware-disc). Citizen science was less known (66% aware) and rarely used (13%) (@fig-aware and @fig-use), mainly concentrated in archaeology (39%), and architecture, building and planning (38%) (fig. 20). Use of both practices was highest at senior levels (@fig-use-career).
+Co-production had relatively high awareness (80%) and moderate use (54%) (@fig-aware and @fig-use). Awareness was strongest among qualitative researchers (89%) and those in the Arts and Humanities, and Social Sciences (@fig-aware-qq and @fig-aware-disc). Citizen science was less known (66% aware) and rarely used (13%) (@fig-aware and @fig-use), mainly concentrated in archaeology (39%), and architecture, building and planning (38%) (@fig-use-disc). Use of both practices was highest at senior levels (@fig-use-career).
 
 ##### Recognising contributions
 
@@ -325,7 +335,7 @@ Viewed through the lens of behavioural and cultural change, the findings suggest
 
 This survey aimed to gather insights from a wide range of researchers with experience across a variety of research methods and with disciplinary diversity and inclusivity. This offers insight on the disciplinary variation when it comes to engaging with OR practices, but it also raises some limitations particularly around the taxonomy of OR and the disciplinary variations. We are aware that different disciplines have a different relationship to some OR practices and during the survey question design carefully considered ways to mitigate potential variation in understanding and interpretation. Nevertheless, discipline-specific interpretation of OR practices, or indeed discipline-specific terminology for those practices might have influenced the responses given. We also note that these data do not lend themselves to appropriate statistical analysis. 
 
-The analysis of sample representativeness (@sec-annex) is, unfortunately, inconclusive. This is likely due to two factors. Firstly, despite best efforts and targeted sampling, response rates remained moderate and so it is likely that self-selection bias remained an important factor. Secondly, the mapping between respondent categories (research field, career level) and the population (HESA) data was very approximate. While the sampling was conducted based on categories available in the population data, the instrument used different sets of categories in order to be consistent with previous surveys [Norris-2022;@HughesNoehrer-2024]. Because the survey was anonymous, we had to rely on respondent self-report for these categories and therefore had to map from those categories to the HESA categories, and this mapping was very approximate and uncertain. We therefore have no strong evidence that the sampling method has produced a more representative sample than that achieved through open sampling. If that is a true reflection of responses, then it would suggest that researchers' intrinsic motivations to respond remain the main factor in whether they do respond. This would imply that we can expect extrinsic factors such as targeted and personalised sampling to have only limited effects unless adopted in a stronger way than done in this survey, for example by having identifiable responses and thereby being able to personalise non-response follow-up actions.
+The analysis of sample representativeness (@sec-annex) is, unfortunately, inconclusive. This is likely due to two factors. Firstly, despite best efforts and targeted sampling, response rates remained moderate and so it is likely that self-selection bias remained an important factor. Secondly, the mapping between respondent categories (research field, career level) and the population (HESA) data was very approximate. While the sampling was conducted based on categories available in the population data, the instrument used different sets of categories in order to be consistent with previous surveys [@Norris-2022;@HughesNoehrer-2024]. Because the survey was anonymous, we had to rely on respondent self-report for these categories and therefore had to map from those categories to the HESA categories, and this mapping was very approximate and uncertain. We therefore have no strong evidence that the sampling method has produced a more representative sample than that achieved through open sampling. If that is a true reflection of responses, then it would suggest that researchers' intrinsic motivations to respond remain the main factor in whether they do respond. This would imply that we can expect extrinsic factors such as targeted and personalised sampling to have only limited effects unless adopted in a stronger way than done in this survey, for example by having identifiable responses and thereby being able to personalise non-response follow-up actions.
 
 One possible next step would be to weight the responses according to the population distribution and provide a re-analysis based on those weighted responses. UKRN may undertake that re-analysis if we have capacity.
 
