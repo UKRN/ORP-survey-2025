@@ -1,6 +1,10 @@
+# on:
+#   push:
+#     branches: master
+    
+#configure manual trigger
 on:
-  push:
-    branches: master
+  workflow_dispatch:
 
 name: Render and Publish
 
