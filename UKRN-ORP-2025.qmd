@@ -76,7 +76,7 @@ The Author contributions and Acknowledgee contributions were created using Tenzi
 
 **Funding acknowledgement**: Research England Development Fund award: Growing and Embedding Open Research in Institutional Practice and Culture
 
-**DOI**: XXXXX
+**DOI**: XXX
 
 {{< pagebreak >}}
 
