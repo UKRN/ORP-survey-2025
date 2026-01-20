@@ -58,6 +58,7 @@ UKRN Working Paper number and date: ######### / `r Sys.Date() |> format("%Y-%m-%
 * [Lavinia Gambelli](https://orcid.org/0000-0002-2257-6364): Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Validation, Visualization, Writing - original draft, and Writing - review & editing.
 * [Lisa DeBruine](https://orcid.org/0000-0002-7523-5539): Data curation, Formal analysis, Visualization, and Writing - review & editing.
 * [Ruth Davies](https://orcid.org/0009-0005-2943-2290): Conceptualization, Formal analysis, Investigation, Visualization, Writing - original draft, and Writing - review & editing.
+* [Cecina Babich Morrow](https://orcid.org/0000-0003-2188-1495): Data curation, Software, and Visualization.
 
 °Corresponding author, neil.jacobs@bristol.ac.uk
 
@@ -68,15 +69,15 @@ UKRN Working Paper number and date: ######### / `r Sys.Date() |> format("%Y-%m-%
 * [Marcus Munafo](https://orcid.org/0000-0002-4049-993X): Conceptualization, Funding acquisition, Supervision, and Writing - review & editing.
 * [Etienne Roesch](https://orcid.org/0000-0002-8913-4173): Data curation, Software, Validation, Visualization, and Writing - review & editing.
 
-We acknowledge the support of [Cecina Babich Morrow](https://orcid.org/0000-0003-2188-1495) and the Jean Golding Institute, University of Bristol.
+We acknowledge the support of the Jean Golding Institute, University of Bristol.
 
 The Author contributions and Acknowledgee contributions were created using Tenzing [@Holcombe-2020].
 
-**Conflict of interest statement**: Patrick Lewis declares Royal Society Industry fellow in partnership with LifeArc; Lavinia Gambelli, Ruth Davies, Alice Howarth, David Shanks, Neil Jacobs, Bill Greenhalf, Banaz Jalil, Lisa DeBruine, Marcus Munafo, and Etienne Roesch declare no competing interest.
+**Conflict of interest statement**: Patrick Lewis declares Royal Society Industry fellow in partnership with LifeArc; Lavinia Gambelli, Ruth Davies, Alice Howarth, David Shanks, Neil Jacobs, Bill Greenhalf, Banaz Jalil, Lisa DeBruine, Marcus Munafo, Cecina Babich Morrow, and Etienne Roesch declare no competing interest.
 
 **Funding acknowledgement**: Research England Development Fund award: Growing and Embedding Open Research in Institutional Practice and Culture
 
-**DOI**: XXX
+**DOI**: XXXXX
 
 {{< pagebreak >}}
 
@@ -1357,7 +1358,7 @@ attitudes_career |>
 
 ### Facilitators
 
-Respondents were asked 'What would facilitators you adopt more open research practices?' and could select up to 5 of the response options. The 12 response options are listed below; a one-word label has been added at the beginning of each, to use on the Y-axes of the figures in this section.
+Respondents were asked 'What would help you to use more open research practices?' and could select up to 5 of the response options. The 12 response options are listed below; a one-word label has been added at the beginning of each, to use on the Y-axes of the figures in this section.
 
 1. Guidance: More, or better organised, information and guidance
 2. Training: More training or mentorship
