@@ -29,7 +29,7 @@ fig-format: png
 fig-dpi: 144
 ---
 
-<footer>UKRN Working Paper ##NUMBER## 
+<footer>UKRN Working Paper 08 
   <span class="license">
     <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
     <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC">
@@ -45,7 +45,7 @@ fig-dpi: 144
   UKRN ROR ID: [049czkm07](https://ror.org/049czkm07)
 </div>
 
-UKRN Working Paper number and date: ######### / `r Sys.Date() |> format("%Y-%m-%d")`
+UKRN Working Paper number and date: 08 / `r Sys.Date() |> format("%Y-%m-%d")`
 
 **Author Contributions**: 
 
