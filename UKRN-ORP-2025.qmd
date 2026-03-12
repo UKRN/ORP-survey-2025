@@ -152,8 +152,7 @@ The design of the survey instrument had to meet several requirements, namely:
 
 Extended discussions, comparisons and mappings between existing instruments led to a decision to base the 2025 survey instrument closely on the BORS instrument. There was much consistency between the BORS and the OR practices covered by the OTRP survey, but the former was considerably simpler. Furthermore, discussions with the BORS team led to an agreement that they would not target ORP partner institutions in their 2025 open survey to avoid duplication; instead, they might use the open data from the 2025 survey to supplement and compare with their survey data, noting the different sampling strategies.
  
-All survey materials including survey questionnaire, ethics application and approval, participant information sheet, survey recruitment email, briefing to UKRN Institutional Leads and Open Research Coordinators and Administrators (including sampling strategy), data analysis preregistration, and sample representativeness analysis are available on the [UKRN Sharing Platform](https://oercommons.org/groups/evaluation-design/15346/24199/7499/?&__hub_id=179).
-The survey aggregate report, survey data and visualisation code are forthcoming on the same platform.
+All survey materials including survey data, visualisation code, codebook, survey instrument, ethics application and approval, participant information sheet, survey recruitment email, briefing to UKRN Institutional Leads and Open Research Coordinators and Administrators (including sampling strategy), data analysis preregistration, and sample representativeness analysis are available on the [UKRN Sharing Platform](https://oercommons.org/groups/evaluation-design/15346/24199/7499/?&__hub_id=179) and on the dedicated [OSF project space](https://doi.org/10.17605/OSF.IO/K8RTZ). The survey data are also available at the University of Bristol data repository [data.bris](https://data.bris.ac.uk/data/) at <https://doi.org/10.5523/bris.3sd9cppbcp2fd20w7zhi7xk2mw>.
 
 
 #### Question design
@@ -162,7 +161,7 @@ We undertook a comprehensive analysis of the OR practices covered by the OTRP 20
  
 Respondents were asked to indicate their awareness of those practices (yes/no) as well as their use of those practices (I use it often/I have used it/I have NOT used it/not applicable to my research). To assess their attitudes, respondents were asked to indicate their level of agreement (Strongly agree / Somewhat agree / Neutral / Somewhat disagree / Strongly disagree) with nine statements reflecting a range of attitudes towards OR practices. To assess potential facilitators to engaging with OR practices, respondents were asked what would help them adopt more OR practices, and allowed to tick up to 5 options from an overall list of 12, including 10 possible facilitators, as well as options indicating they had no intention of adopting more, or that they were already doing all they could. 
  
-Finally, respondents were asked to provide their discipline based on categories adapted from HESA (Higher Education Statistics Agency), the research methods they use, their main research approach (qualitative, quantitative, both, neither) and their career level. Descriptions of these categories are available in the survey instrument on the [UKRN Sharing Platform](https://oercommons.org/groups/evaluation-design/15346/24199/7499/?&__hub_id=179).
+Finally, respondents were asked to provide their discipline based on categories adapted from HESA (Higher Education Statistics Agency), the research methods they use, their main research approach (qualitative, quantitative, both, neither) and their career level. Descriptions of these categories are available in the survey instrument.
 
 
 #### Sample strategy
@@ -193,7 +192,7 @@ The options were as follows:
 
 Among these, Option A was communicated and discussed with ORP partners over several months and was strongly preferred. This gave partner institutions time to liaise with their HESA data teams and navigate their local ethics context. Most of the partners adopted Option A, no partners adopted Option B or Option C. One institution (Royal Veterinary College) circulated the survey to all research staff and students due to the comparatively small size of the institution's research population. Three decided not to deploy the survey. In total 19 institutions deployed the survey and are included in this report: Cardiff University, Keele University, King's College London, Newcastle University, Oxford Brookes University, Royal Veterinary College, University College London, University of Bristol, University of Edinburgh, University of Glasgow, University of Leeds, University of Liverpool, University of Oxford, University of Reading, University of Sheffield, University of Southampton, University of Surrey, University of Sussex, University of Wolverhampton.
 
-The detailed sampling strategy and guidance to partner institutions are available on the [UKRN Sharing Platform](https://oercommons.org/groups/evaluation-design/15346/24199/7499/?&__hub_id=179).
+The detailed sampling strategy and guidance to partner institutions are available on the [UKRN Sharing Platform](https://oercommons.org/groups/evaluation-design/15346/24199/7499/?&__hub_id=179) and on the dedicated [OSF project space](https://doi.org/10.17605/OSF.IO/K8RTZ).
 
 
 #### Deployment
@@ -364,11 +363,11 @@ The study had ethics approval from the University of Bristol, reference 23351. S
 
 ### Protocol
 
-The protocol for the ORP Evaluation Design project, of which the survey reported here is a part, is available at <https://oercommons.org/courses/orp-evaluation-protocol-2?__hub_id=179>
+The protocol for the ORP Evaluation Design project, of which the survey reported here is a part, is available at <https://oercommons.org/courses/orp-evaluation-protocol-2?__hub_id=179> and at <https://doi.org/10.17605/OSF.IO/V5T7W>
 
 ### Materials and data
 
-Study materials, including the survey instrument, consent forms and information sheets are available at <https://oercommons.org/courseware/lesson/137449?__hub_id=179>
+Study materials, including the survey instrument, consent forms and information sheets are available at <https://oercommons.org/courseware/lesson/137449?__hub_id=179> and at <https://doi.org/10.17605/OSF.IO/K8RTZ>
 
 ### Annex {#sec-annex}
 
